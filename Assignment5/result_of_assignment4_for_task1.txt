@@ -1,0 +1,703 @@
+25/11/14 00:30:23 INFO SparkContext: Running Spark version 2.4.8-amzn-2
+25/11/14 00:30:23 INFO SparkContext: Submitted application: Assignment4_kNN_20News
+25/11/14 00:30:23 INFO SecurityManager: Changing view acls to: hadoop
+25/11/14 00:30:23 INFO SecurityManager: Changing modify acls to: hadoop
+25/11/14 00:30:23 INFO SecurityManager: Changing view acls groups to: 
+25/11/14 00:30:23 INFO SecurityManager: Changing modify acls groups to: 
+25/11/14 00:30:23 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(hadoop); groups with view permissions: Set(); users  with modify permissions: Set(hadoop); groups with modify permissions: Set()
+25/11/14 00:30:23 INFO Utils: Successfully started service 'sparkDriver' on port 33059.
+25/11/14 00:30:23 INFO SparkEnv: Registering MapOutputTracker
+25/11/14 00:30:23 INFO SparkEnv: Registering BlockManagerMaster
+25/11/14 00:30:23 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/11/14 00:30:23 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/11/14 00:30:23 INFO DiskBlockManager: Created local directory at /mnt/tmp/blockmgr-4d43f146-1425-4589-8f81-12300aba37b9
+25/11/14 00:30:23 INFO MemoryStore: MemoryStore started with capacity 912.3 MB
+25/11/14 00:30:23 INFO SparkEnv: Registering OutputCommitCoordinator
+25/11/14 00:30:23 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/11/14 00:30:23 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://ip-10-0-25-18.ec2.internal:4040
+25/11/14 00:30:23 INFO Utils: Using 50 preallocated executors (minExecutors: 0). Set spark.dynamicAllocation.preallocateExecutors to `false` disable executor preallocation.
+25/11/14 00:30:24 INFO RMProxy: Connecting to ResourceManager at ip-10-0-25-18.ec2.internal/10.0.25.18:8032
+25/11/14 00:30:24 INFO Client: Requesting a new application from cluster with 2 NodeManagers
+25/11/14 00:30:24 INFO Configuration: resource-types.xml not found
+25/11/14 00:30:24 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+25/11/14 00:30:24 INFO ResourceUtils: Adding resource type - name = memory-mb, units = Mi, type = COUNTABLE
+25/11/14 00:30:24 INFO ResourceUtils: Adding resource type - name = vcores, units = , type = COUNTABLE
+25/11/14 00:30:24 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (23424 MB per container)
+25/11/14 00:30:24 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+25/11/14 00:30:24 INFO Client: Setting up container launch context for our AM
+25/11/14 00:30:24 INFO Client: Setting up the launch environment for our AM container
+25/11/14 00:30:24 INFO Client: Preparing resources for our AM container
+25/11/14 00:30:24 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+25/11/14 00:30:26 INFO Client: Uploading resource file:/mnt/tmp/spark-5eca83c6-eb31-44ad-8d82-6b8caec64271/__spark_libs__2098846301800241943.zip -> hdfs://ip-10-0-25-18.ec2.internal:8020/user/hadoop/.sparkStaging/application_1763080097695_0001/__spark_libs__2098846301800241943.zip
+25/11/14 00:30:27 INFO Client: Uploading resource file:/etc/hudi/conf/hudi-defaults.conf -> hdfs://ip-10-0-25-18.ec2.internal:8020/user/hadoop/.sparkStaging/application_1763080097695_0001/hudi-defaults.conf
+25/11/14 00:30:27 INFO Client: Uploading resource file:/usr/lib/spark/python/lib/pyspark.zip -> hdfs://ip-10-0-25-18.ec2.internal:8020/user/hadoop/.sparkStaging/application_1763080097695_0001/pyspark.zip
+25/11/14 00:30:28 INFO Client: Uploading resource file:/usr/lib/spark/python/lib/py4j-0.10.7-src.zip -> hdfs://ip-10-0-25-18.ec2.internal:8020/user/hadoop/.sparkStaging/application_1763080097695_0001/py4j-0.10.7-src.zip
+25/11/14 00:30:28 INFO Client: Uploading resource file:/mnt/tmp/spark-5eca83c6-eb31-44ad-8d82-6b8caec64271/__spark_conf__5313532556118467898.zip -> hdfs://ip-10-0-25-18.ec2.internal:8020/user/hadoop/.sparkStaging/application_1763080097695_0001/__spark_conf__.zip
+25/11/14 00:30:29 INFO SecurityManager: Changing view acls to: hadoop
+25/11/14 00:30:29 INFO SecurityManager: Changing modify acls to: hadoop
+25/11/14 00:30:29 INFO SecurityManager: Changing view acls groups to: 
+25/11/14 00:30:29 INFO SecurityManager: Changing modify acls groups to: 
+25/11/14 00:30:29 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(hadoop); groups with view permissions: Set(); users  with modify permissions: Set(hadoop); groups with modify permissions: Set()
+25/11/14 00:30:29 INFO Client: Submitting application application_1763080097695_0001 to ResourceManager
+25/11/14 00:30:30 INFO YarnClientImpl: Submitted application application_1763080097695_0001
+25/11/14 00:30:30 INFO SchedulerExtensionServices: Starting Yarn extension services with app application_1763080097695_0001 and attemptId None
+25/11/14 00:30:31 INFO Client: Application report for application_1763080097695_0001 (state: ACCEPTED)
+25/11/14 00:30:31 INFO Client: 
+	 client token: N/A
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1763080229936
+	 final status: UNDEFINED
+	 tracking URL: http://ip-10-0-25-18.ec2.internal:20888/proxy/application_1763080097695_0001/
+	 user: hadoop
+25/11/14 00:30:32 INFO Client: Application report for application_1763080097695_0001 (state: ACCEPTED)
+25/11/14 00:30:32 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> ip-10-0-25-18.ec2.internal, PROXY_URI_BASES -> http://ip-10-0-25-18.ec2.internal:20888/proxy/application_1763080097695_0001), /proxy/application_1763080097695_0001
+25/11/14 00:30:33 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+25/11/14 00:30:33 INFO Client: Application report for application_1763080097695_0001 (state: RUNNING)
+25/11/14 00:30:33 INFO Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 10.0.23.152
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1763080229936
+	 final status: UNDEFINED
+	 tracking URL: http://ip-10-0-25-18.ec2.internal:20888/proxy/application_1763080097695_0001/
+	 user: hadoop
+25/11/14 00:30:33 INFO YarnClientSchedulerBackend: Application application_1763080097695_0001 has started running.
+25/11/14 00:30:33 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44803.
+25/11/14 00:30:33 INFO NettyBlockTransferService: Server created on ip-10-0-25-18.ec2.internal:44803
+25/11/14 00:30:33 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/11/14 00:30:33 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, ip-10-0-25-18.ec2.internal, 44803, None)
+25/11/14 00:30:33 INFO BlockManagerMasterEndpoint: Registering block manager ip-10-0-25-18.ec2.internal:44803 with 912.3 MB RAM, BlockManagerId(driver, ip-10-0-25-18.ec2.internal, 44803, None)
+25/11/14 00:30:33 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, ip-10-0-25-18.ec2.internal, 44803, None)
+25/11/14 00:30:33 INFO BlockManager: external shuffle service port = 7337
+25/11/14 00:30:33 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, ip-10-0-25-18.ec2.internal, 44803, None)
+25/11/14 00:30:33 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /metrics/json.
+25/11/14 00:30:33 INFO SingleEventLogFileWriter: Logging events to hdfs:/var/log/spark/apps/application_1763080097695_0001.inprogress
+25/11/14 00:30:33 INFO Utils: Using 50 preallocated executors (minExecutors: 0). Set spark.dynamicAllocation.preallocateExecutors to `false` disable executor preallocation.
+25/11/14 00:30:33 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+25/11/14 00:30:33 INFO SharedState: loading hive config file: file:/etc/spark/conf.dist/hive-site.xml
+25/11/14 00:30:33 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('hdfs:///user/spark/warehouse').
+25/11/14 00:30:33 INFO SharedState: Warehouse path is 'hdfs:///user/spark/warehouse'.
+25/11/14 00:30:33 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /SQL.
+25/11/14 00:30:33 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /SQL/json.
+25/11/14 00:30:33 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /SQL/execution.
+25/11/14 00:30:33 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /SQL/execution/json.
+25/11/14 00:30:33 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /static/sql.
+25/11/14 00:30:33 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+25/11/14 00:30:34 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 323.2 KB, free 912.0 MB)
+25/11/14 00:30:34 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 30.3 KB, free 912.0 MB)
+25/11/14 00:30:34 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 30.3 KB, free: 912.3 MB)
+25/11/14 00:30:34 INFO SparkContext: Created broadcast 0 from textFile at NativeMethodAccessorImpl.java:0
+25/11/14 00:30:34 INFO GPLNativeCodeLoader: Loaded native gpl library
+25/11/14 00:30:34 INFO LzoCodec: Successfully loaded & initialized native-lzo library [hadoop-lzo rev 049362b7cf53ff5f739d6b1532457f2c6cd495e8]
+25/11/14 00:30:34 INFO ClientConfigurationFactory: Set initial getObject socket timeout to 2000 ms.
+25/11/14 00:30:35 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.0.23.152:57366) with ID 2
+25/11/14 00:30:35 INFO ExecutorAllocationManager: New executor 2 has registered (new total is 1)
+25/11/14 00:30:35 INFO BlockManagerMasterEndpoint: Registering block manager ip-10-0-23-152.ec2.internal:40245 with 9.3 GB RAM, BlockManagerId(2, ip-10-0-23-152.ec2.internal, 40245, None)
+25/11/14 00:30:35 INFO FileInputFormat: Total input files to process : 1
+25/11/14 00:30:35 INFO SparkContext: Starting job: sortBy at /home/hadoop/sg275_assignment4.py:52
+25/11/14 00:30:35 INFO DAGScheduler: Registering RDD 4 (reduceByKey at /home/hadoop/sg275_assignment4.py:43) as input to shuffle 0
+25/11/14 00:30:35 INFO DAGScheduler: Got job 0 (sortBy at /home/hadoop/sg275_assignment4.py:52) with 2 output partitions
+25/11/14 00:30:35 INFO DAGScheduler: Final stage: ResultStage 1 (sortBy at /home/hadoop/sg275_assignment4.py:52)
+25/11/14 00:30:35 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+25/11/14 00:30:35 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+25/11/14 00:30:35 INFO DAGScheduler: Submitting ShuffleMapStage 0 (PairwiseRDD[4] at reduceByKey at /home/hadoop/sg275_assignment4.py:43), which has no missing parents
+25/11/14 00:30:35 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 13.4 KB, free 911.9 MB)
+25/11/14 00:30:35 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 8.1 KB, free 911.9 MB)
+25/11/14 00:30:35 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 8.1 KB, free: 912.3 MB)
+25/11/14 00:30:35 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:35 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 0 (PairwiseRDD[4] at reduceByKey at /home/hadoop/sg275_assignment4.py:43) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:35 INFO YarnScheduler: Adding task set 0.0 with 2 tasks
+25/11/14 00:30:35 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, ip-10-0-23-152.ec2.internal, executor 2, partition 0, RACK_LOCAL, 7916 bytes)
+25/11/14 00:30:35 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, ip-10-0-23-152.ec2.internal, executor 2, partition 1, RACK_LOCAL, 7916 bytes)
+25/11/14 00:30:35 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 8.1 KB, free: 9.3 GB)
+25/11/14 00:30:35 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 30.3 KB, free: 9.3 GB)
+25/11/14 00:30:36 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (10.0.21.194:45822) with ID 1
+25/11/14 00:30:36 INFO ExecutorAllocationManager: New executor 1 has registered (new total is 2)
+25/11/14 00:30:36 INFO BlockManagerMasterEndpoint: Registering block manager ip-10-0-21-194.ec2.internal:32829 with 9.3 GB RAM, BlockManagerId(1, ip-10-0-21-194.ec2.internal, 32829, None)
+25/11/14 00:30:38 INFO BlockManagerInfo: Added rdd_2_1 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 28.3 MB, free: 9.3 GB)
+25/11/14 00:30:38 INFO BlockManagerInfo: Added rdd_2_0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 26.2 MB, free: 9.3 GB)
+25/11/14 00:30:39 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 3948 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:39 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 53667
+25/11/14 00:30:39 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 4066 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:39 INFO YarnScheduler: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+25/11/14 00:30:39 INFO DAGScheduler: ShuffleMapStage 0 (reduceByKey at /home/hadoop/sg275_assignment4.py:43) finished in 4.102 s
+25/11/14 00:30:39 INFO DAGScheduler: looking for newly runnable stages
+25/11/14 00:30:39 INFO DAGScheduler: running: Set()
+25/11/14 00:30:39 INFO DAGScheduler: waiting: Set(ResultStage 1)
+25/11/14 00:30:39 INFO DAGScheduler: failed: Set()
+25/11/14 00:30:39 INFO DAGScheduler: Submitting ResultStage 1 (PythonRDD[7] at sortBy at /home/hadoop/sg275_assignment4.py:52), which has no missing parents
+25/11/14 00:30:39 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 9.7 KB, free 911.9 MB)
+25/11/14 00:30:39 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 6.2 KB, free 911.9 MB)
+25/11/14 00:30:39 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 6.2 KB, free: 912.3 MB)
+25/11/14 00:30:39 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:39 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 1 (PythonRDD[7] at sortBy at /home/hadoop/sg275_assignment4.py:52) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:39 INFO YarnScheduler: Adding task set 1.0 with 2 tasks
+25/11/14 00:30:39 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 2, ip-10-0-23-152.ec2.internal, executor 2, partition 0, NODE_LOCAL, 7936 bytes)
+25/11/14 00:30:39 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 3, ip-10-0-23-152.ec2.internal, executor 2, partition 1, NODE_LOCAL, 7936 bytes)
+25/11/14 00:30:39 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 6.2 KB, free: 9.3 GB)
+25/11/14 00:30:39 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 10.0.23.152:57366
+25/11/14 00:30:39 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 129 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:39 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 3) in 131 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:39 INFO YarnScheduler: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+25/11/14 00:30:39 INFO DAGScheduler: ResultStage 1 (sortBy at /home/hadoop/sg275_assignment4.py:52) finished in 0.139 s
+25/11/14 00:30:39 INFO DAGScheduler: Job 0 finished: sortBy at /home/hadoop/sg275_assignment4.py:52, took 4.302668 s
+25/11/14 00:30:39 INFO SparkContext: Starting job: sortBy at /home/hadoop/sg275_assignment4.py:52
+25/11/14 00:30:39 INFO DAGScheduler: Got job 1 (sortBy at /home/hadoop/sg275_assignment4.py:52) with 2 output partitions
+25/11/14 00:30:39 INFO DAGScheduler: Final stage: ResultStage 3 (sortBy at /home/hadoop/sg275_assignment4.py:52)
+25/11/14 00:30:39 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 2)
+25/11/14 00:30:39 INFO DAGScheduler: Missing parents: List()
+25/11/14 00:30:39 INFO DAGScheduler: Submitting ResultStage 3 (PythonRDD[8] at sortBy at /home/hadoop/sg275_assignment4.py:52), which has no missing parents
+25/11/14 00:30:39 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 9.4 KB, free 911.9 MB)
+25/11/14 00:30:39 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 6.1 KB, free 911.9 MB)
+25/11/14 00:30:39 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 6.1 KB, free: 912.3 MB)
+25/11/14 00:30:39 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:39 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 3 (PythonRDD[8] at sortBy at /home/hadoop/sg275_assignment4.py:52) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:39 INFO YarnScheduler: Adding task set 3.0 with 2 tasks
+25/11/14 00:30:39 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 4, ip-10-0-23-152.ec2.internal, executor 2, partition 0, NODE_LOCAL, 7936 bytes)
+25/11/14 00:30:39 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 5, ip-10-0-23-152.ec2.internal, executor 2, partition 1, NODE_LOCAL, 7936 bytes)
+25/11/14 00:30:39 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 6.1 KB, free: 9.3 GB)
+25/11/14 00:30:39 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 5) in 70 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:39 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 4) in 72 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:39 INFO YarnScheduler: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+25/11/14 00:30:39 INFO DAGScheduler: ResultStage 3 (sortBy at /home/hadoop/sg275_assignment4.py:52) finished in 0.076 s
+25/11/14 00:30:39 INFO DAGScheduler: Job 1 finished: sortBy at /home/hadoop/sg275_assignment4.py:52, took 0.079083 s
+25/11/14 00:30:39 INFO SparkContext: Starting job: runJob at PythonRDD.scala:153
+25/11/14 00:30:39 INFO DAGScheduler: Registering RDD 10 (sortBy at /home/hadoop/sg275_assignment4.py:52) as input to shuffle 1
+25/11/14 00:30:39 INFO DAGScheduler: Got job 2 (runJob at PythonRDD.scala:153) with 1 output partitions
+25/11/14 00:30:39 INFO DAGScheduler: Final stage: ResultStage 6 (runJob at PythonRDD.scala:153)
+25/11/14 00:30:39 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 5)
+25/11/14 00:30:39 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 5)
+25/11/14 00:30:39 INFO DAGScheduler: Submitting ShuffleMapStage 5 (PairwiseRDD[10] at sortBy at /home/hadoop/sg275_assignment4.py:52), which has no missing parents
+25/11/14 00:30:39 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 10.4 KB, free 911.9 MB)
+25/11/14 00:30:39 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 6.8 KB, free 911.9 MB)
+25/11/14 00:30:39 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 6.8 KB, free: 912.2 MB)
+25/11/14 00:30:40 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:40 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 5 (PairwiseRDD[10] at sortBy at /home/hadoop/sg275_assignment4.py:52) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:40 INFO YarnScheduler: Adding task set 5.0 with 2 tasks
+25/11/14 00:30:40 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 6, ip-10-0-23-152.ec2.internal, executor 2, partition 0, NODE_LOCAL, 7662 bytes)
+25/11/14 00:30:40 INFO TaskSetManager: Starting task 1.0 in stage 5.0 (TID 7, ip-10-0-23-152.ec2.internal, executor 2, partition 1, NODE_LOCAL, 7662 bytes)
+25/11/14 00:30:40 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 6.8 KB, free: 9.3 GB)
+25/11/14 00:30:40 INFO TaskSetManager: Finished task 1.0 in stage 5.0 (TID 7) in 119 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:40 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 6) in 120 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:40 INFO YarnScheduler: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+25/11/14 00:30:40 INFO DAGScheduler: ShuffleMapStage 5 (sortBy at /home/hadoop/sg275_assignment4.py:52) finished in 0.125 s
+25/11/14 00:30:40 INFO DAGScheduler: looking for newly runnable stages
+25/11/14 00:30:40 INFO DAGScheduler: running: Set()
+25/11/14 00:30:40 INFO DAGScheduler: waiting: Set(ResultStage 6)
+25/11/14 00:30:40 INFO DAGScheduler: failed: Set()
+25/11/14 00:30:40 INFO DAGScheduler: Submitting ResultStage 6 (PythonRDD[13] at RDD at PythonRDD.scala:53), which has no missing parents
+25/11/14 00:30:40 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 7.9 KB, free 911.9 MB)
+25/11/14 00:30:40 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 5.1 KB, free 911.9 MB)
+25/11/14 00:30:40 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 5.1 KB, free: 912.2 MB)
+25/11/14 00:30:40 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:40 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 6 (PythonRDD[13] at RDD at PythonRDD.scala:53) (first 15 tasks are for partitions Vector(0))
+25/11/14 00:30:40 INFO YarnScheduler: Adding task set 6.0 with 1 tasks
+25/11/14 00:30:40 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 8, ip-10-0-23-152.ec2.internal, executor 2, partition 0, NODE_LOCAL, 7936 bytes)
+25/11/14 00:30:40 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 5.1 KB, free: 9.3 GB)
+25/11/14 00:30:40 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 1 to 10.0.23.152:57366
+25/11/14 00:30:40 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 8) in 158 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/1)
+25/11/14 00:30:40 INFO YarnScheduler: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+25/11/14 00:30:40 INFO DAGScheduler: ResultStage 6 (runJob at PythonRDD.scala:153) finished in 0.165 s
+25/11/14 00:30:40 INFO DAGScheduler: Job 2 finished: runJob at PythonRDD.scala:153, took 0.295610 s
+25/11/14 00:30:40 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 312.0 B, free 911.9 MB)
+25/11/14 00:30:40 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 278.7 KB, free 911.6 MB)
+25/11/14 00:30:40 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 278.7 KB, free: 912.0 MB)
+25/11/14 00:30:40 INFO SparkContext: Created broadcast 6 from broadcast at NativeMethodAccessorImpl.java:0
+25/11/14 00:30:40 INFO SparkContext: Starting job: count at /home/hadoop/sg275_assignment4.py:104
+25/11/14 00:30:40 INFO DAGScheduler: Got job 3 (count at /home/hadoop/sg275_assignment4.py:104) with 2 output partitions
+25/11/14 00:30:40 INFO DAGScheduler: Final stage: ResultStage 7 (count at /home/hadoop/sg275_assignment4.py:104)
+25/11/14 00:30:40 INFO DAGScheduler: Parents of final stage: List()
+25/11/14 00:30:40 INFO DAGScheduler: Missing parents: List()
+25/11/14 00:30:40 INFO DAGScheduler: Submitting ResultStage 7 (PythonRDD[15] at count at /home/hadoop/sg275_assignment4.py:104), which has no missing parents
+25/11/14 00:30:40 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 12.3 KB, free 911.6 MB)
+25/11/14 00:30:40 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 7.1 KB, free 911.6 MB)
+25/11/14 00:30:40 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 7.1 KB, free: 912.0 MB)
+25/11/14 00:30:40 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:40 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 7 (PythonRDD[15] at count at /home/hadoop/sg275_assignment4.py:104) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:40 INFO YarnScheduler: Adding task set 7.0 with 2 tasks
+25/11/14 00:30:40 INFO TaskSetManager: Starting task 0.0 in stage 7.0 (TID 9, ip-10-0-23-152.ec2.internal, executor 2, partition 0, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:40 INFO TaskSetManager: Starting task 1.0 in stage 7.0 (TID 10, ip-10-0-23-152.ec2.internal, executor 2, partition 1, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:40 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 7.1 KB, free: 9.3 GB)
+25/11/14 00:30:40 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 278.7 KB, free: 9.3 GB)
+25/11/14 00:30:44 INFO BlockManagerInfo: Added rdd_14_1 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 11.0 MB, free: 9.2 GB)
+25/11/14 00:30:44 INFO BlockManagerInfo: Added rdd_14_0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 12.5 MB, free: 9.2 GB)
+25/11/14 00:30:45 INFO TaskSetManager: Finished task 1.0 in stage 7.0 (TID 10) in 4857 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:45 INFO TaskSetManager: Finished task 0.0 in stage 7.0 (TID 9) in 5026 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:45 INFO YarnScheduler: Removed TaskSet 7.0, whose tasks have all completed, from pool 
+25/11/14 00:30:45 INFO DAGScheduler: ResultStage 7 (count at /home/hadoop/sg275_assignment4.py:104) finished in 5.032 s
+25/11/14 00:30:45 INFO DAGScheduler: Job 3 finished: count at /home/hadoop/sg275_assignment4.py:104, took 5.034656 s
+25/11/14 00:30:45 INFO SparkContext: Starting job: collect at /home/hadoop/sg275_assignment4.py:127
+25/11/14 00:30:45 INFO DAGScheduler: Registering RDD 17 (reduceByKey at /home/hadoop/sg275_assignment4.py:125) as input to shuffle 2
+25/11/14 00:30:45 INFO DAGScheduler: Got job 4 (collect at /home/hadoop/sg275_assignment4.py:127) with 2 output partitions
+25/11/14 00:30:45 INFO DAGScheduler: Final stage: ResultStage 9 (collect at /home/hadoop/sg275_assignment4.py:127)
+25/11/14 00:30:45 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 8)
+25/11/14 00:30:45 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 8)
+25/11/14 00:30:45 INFO DAGScheduler: Submitting ShuffleMapStage 8 (PairwiseRDD[17] at reduceByKey at /home/hadoop/sg275_assignment4.py:125), which has no missing parents
+25/11/14 00:30:45 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 14.9 KB, free 911.6 MB)
+25/11/14 00:30:45 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 9.1 KB, free 911.6 MB)
+25/11/14 00:30:45 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 9.1 KB, free: 912.0 MB)
+25/11/14 00:30:45 INFO SparkContext: Created broadcast 8 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:45 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 8 (PairwiseRDD[17] at reduceByKey at /home/hadoop/sg275_assignment4.py:125) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:45 INFO YarnScheduler: Adding task set 8.0 with 2 tasks
+25/11/14 00:30:45 INFO TaskSetManager: Starting task 0.0 in stage 8.0 (TID 11, ip-10-0-23-152.ec2.internal, executor 2, partition 0, PROCESS_LOCAL, 7916 bytes)
+25/11/14 00:30:45 INFO TaskSetManager: Starting task 1.0 in stage 8.0 (TID 12, ip-10-0-23-152.ec2.internal, executor 2, partition 1, PROCESS_LOCAL, 7916 bytes)
+25/11/14 00:30:45 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 9.1 KB, free: 9.2 GB)
+25/11/14 00:30:46 INFO TaskSetManager: Finished task 0.0 in stage 8.0 (TID 11) in 1055 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:46 INFO TaskSetManager: Finished task 1.0 in stage 8.0 (TID 12) in 1059 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:46 INFO YarnScheduler: Removed TaskSet 8.0, whose tasks have all completed, from pool 
+25/11/14 00:30:46 INFO DAGScheduler: ShuffleMapStage 8 (reduceByKey at /home/hadoop/sg275_assignment4.py:125) finished in 1.065 s
+25/11/14 00:30:46 INFO DAGScheduler: looking for newly runnable stages
+25/11/14 00:30:46 INFO DAGScheduler: running: Set()
+25/11/14 00:30:46 INFO DAGScheduler: waiting: Set(ResultStage 9)
+25/11/14 00:30:46 INFO DAGScheduler: failed: Set()
+25/11/14 00:30:46 INFO DAGScheduler: Submitting ResultStage 9 (PythonRDD[20] at collect at /home/hadoop/sg275_assignment4.py:127), which has no missing parents
+25/11/14 00:30:46 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 7.6 KB, free 911.6 MB)
+25/11/14 00:30:46 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 4.8 KB, free 911.5 MB)
+25/11/14 00:30:46 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 4.8 KB, free: 911.9 MB)
+25/11/14 00:30:46 INFO SparkContext: Created broadcast 9 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:46 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 9 (PythonRDD[20] at collect at /home/hadoop/sg275_assignment4.py:127) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:46 INFO YarnScheduler: Adding task set 9.0 with 2 tasks
+25/11/14 00:30:46 INFO TaskSetManager: Starting task 0.0 in stage 9.0 (TID 13, ip-10-0-23-152.ec2.internal, executor 2, partition 0, NODE_LOCAL, 7936 bytes)
+25/11/14 00:30:46 INFO TaskSetManager: Starting task 1.0 in stage 9.0 (TID 14, ip-10-0-23-152.ec2.internal, executor 2, partition 1, NODE_LOCAL, 7936 bytes)
+25/11/14 00:30:46 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 4.8 KB, free: 9.2 GB)
+25/11/14 00:30:46 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 2 to 10.0.23.152:57366
+25/11/14 00:30:46 INFO TaskSetManager: Finished task 0.0 in stage 9.0 (TID 13) in 69 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:46 INFO TaskSetManager: Finished task 1.0 in stage 9.0 (TID 14) in 69 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:46 INFO YarnScheduler: Removed TaskSet 9.0, whose tasks have all completed, from pool 
+25/11/14 00:30:46 INFO DAGScheduler: ResultStage 9 (collect at /home/hadoop/sg275_assignment4.py:127) finished in 0.074 s
+25/11/14 00:30:46 INFO DAGScheduler: Job 4 finished: collect at /home/hadoop/sg275_assignment4.py:127, took 1.144606 s
+25/11/14 00:30:46 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 312.0 B, free 911.5 MB)
+25/11/14 00:30:46 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 59.6 KB, free 911.5 MB)
+25/11/14 00:30:46 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 59.6 KB, free: 911.9 MB)
+25/11/14 00:30:46 INFO SparkContext: Created broadcast 10 from broadcast at NativeMethodAccessorImpl.java:0
+25/11/14 00:30:46 INFO SparkContext: Starting job: lookup at /home/hadoop/sg275_assignment4.py:88
+25/11/14 00:30:46 INFO DAGScheduler: Got job 5 (lookup at /home/hadoop/sg275_assignment4.py:88) with 2 output partitions
+25/11/14 00:30:46 INFO DAGScheduler: Final stage: ResultStage 10 (lookup at /home/hadoop/sg275_assignment4.py:88)
+25/11/14 00:30:46 INFO DAGScheduler: Parents of final stage: List()
+25/11/14 00:30:46 INFO DAGScheduler: Missing parents: List()
+25/11/14 00:30:46 INFO DAGScheduler: Submitting ResultStage 10 (PythonRDD[23] at lookup at /home/hadoop/sg275_assignment4.py:88), which has no missing parents
+25/11/14 00:30:46 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 11.7 KB, free 911.5 MB)
+25/11/14 00:30:46 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 6.5 KB, free 911.5 MB)
+25/11/14 00:30:46 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 6.5 KB, free: 911.9 MB)
+25/11/14 00:30:46 INFO SparkContext: Created broadcast 11 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:46 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 10 (PythonRDD[23] at lookup at /home/hadoop/sg275_assignment4.py:88) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:46 INFO YarnScheduler: Adding task set 10.0 with 2 tasks
+25/11/14 00:30:46 INFO TaskSetManager: Starting task 0.0 in stage 10.0 (TID 15, ip-10-0-23-152.ec2.internal, executor 2, partition 0, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:46 INFO TaskSetManager: Starting task 1.0 in stage 10.0 (TID 16, ip-10-0-23-152.ec2.internal, executor 2, partition 1, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:46 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 6.5 KB, free: 9.2 GB)
+25/11/14 00:30:47 INFO TaskSetManager: Finished task 1.0 in stage 10.0 (TID 16) in 566 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:47 INFO TaskSetManager: Finished task 0.0 in stage 10.0 (TID 15) in 681 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:47 INFO YarnScheduler: Removed TaskSet 10.0, whose tasks have all completed, from pool 
+25/11/14 00:30:47 INFO DAGScheduler: ResultStage 10 (lookup at /home/hadoop/sg275_assignment4.py:88) finished in 0.685 s
+25/11/14 00:30:47 INFO DAGScheduler: Job 5 finished: lookup at /home/hadoop/sg275_assignment4.py:88, took 0.687728 s
+Document: 20_newsgroups/alt.atheism/51265
+Non-zero count vector entries (index, value):
+[(0, 11.0), (1, 5.0), (2, 5.0), (3, 3.0), (4, 1.0), (5, 2.0), (6, 4.0), (7, 1.0), (8, 2.0), (10, 3.0), (11, 1.0), (12, 1.0), (13, 3.0), (14, 2.0), (15, 1.0), (17, 2.0), (18, 1.0), (19, 1.0), (21, 2.0), (23, 1.0), (24, 1.0), (25, 2.0), (26, 2.0), (27, 1.0), (29, 2.0), (31, 1.0), (32, 1.0), (33, 1.0), (34, 1.0), (36, 1.0), (38, 1.0), (42, 1.0), (44, 1.0), (46, 1.0), (48, 2.0), (50, 1.0), (53, 1.0), (56, 2.0), (57, 2.0), (59, 1.0), (66, 3.0), (67, 1.0), (71, 1.0), (73, 1.0), (86, 1.0), (93, 1.0), (95, 1.0), (110, 1.0), (117, 1.0), (127, 2.0), (155, 1.0), (164, 1.0), (166, 1.0), (167, 2.0), (197, 1.0), (199, 1.0), (209, 1.0), (212, 5.0), (219, 1.0), (223, 1.0), (283, 1.0), (327, 1.0), (344, 1.0), (347, 1.0), (367, 1.0), (399, 1.0), (412, 1.0), (459, 1.0), (486, 1.0), (501, 1.0), (566, 2.0), (621, 1.0), (684, 3.0), (693, 1.0), (698, 1.0), (699, 1.0), (724, 1.0), (771, 1.0), (849, 1.0), (927, 1.0), (1117, 1.0), (1143, 1.0), (1144, 1.0), (1176, 1.0), (1239, 1.0), (1418, 1.0), (1604, 2.0), (1668, 1.0), (1674, 1.0), (1681, 1.0), (1819, 1.0), (1898, 1.0), (2021, 1.0), (2064, 1.0), (2249, 1.0), (2260, 1.0), (2342, 1.0), (2380, 1.0), (2460, 1.0), (2721, 2.0), (2986, 1.0), (3068, 1.0), (3780, 1.0), (4071, 1.0), (4469, 1.0), (5242, 4.0), (5616, 1.0), (5748, 2.0), (5811, 1.0), (6173, 1.0), (6454, 1.0), (6651, 3.0), (7062, 2.0), (7130, 1.0), (7317, 1.0), (7969, 1.0), (8336, 2.0), (8856, 1.0), (9638, 1.0), (11842, 1.0), (12735, 1.0), (14013, 1.0), (14358, 1.0), (15022, 1.0), (16400, 1.0), (16902, 1.0), (17896, 1.0)]
+
+25/11/14 00:30:47 INFO SparkContext: Starting job: lookup at /home/hadoop/sg275_assignment4.py:88
+25/11/14 00:30:47 INFO DAGScheduler: Got job 6 (lookup at /home/hadoop/sg275_assignment4.py:88) with 2 output partitions
+25/11/14 00:30:47 INFO DAGScheduler: Final stage: ResultStage 11 (lookup at /home/hadoop/sg275_assignment4.py:88)
+25/11/14 00:30:47 INFO DAGScheduler: Parents of final stage: List()
+25/11/14 00:30:47 INFO DAGScheduler: Missing parents: List()
+25/11/14 00:30:47 INFO DAGScheduler: Submitting ResultStage 11 (PythonRDD[24] at lookup at /home/hadoop/sg275_assignment4.py:88), which has no missing parents
+25/11/14 00:30:47 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 11.7 KB, free 911.5 MB)
+25/11/14 00:30:47 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 6.5 KB, free 911.5 MB)
+25/11/14 00:30:47 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 6.5 KB, free: 911.9 MB)
+25/11/14 00:30:47 INFO SparkContext: Created broadcast 12 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:47 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 11 (PythonRDD[24] at lookup at /home/hadoop/sg275_assignment4.py:88) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:47 INFO YarnScheduler: Adding task set 11.0 with 2 tasks
+25/11/14 00:30:47 INFO TaskSetManager: Starting task 0.0 in stage 11.0 (TID 17, ip-10-0-23-152.ec2.internal, executor 2, partition 0, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:47 INFO TaskSetManager: Starting task 1.0 in stage 11.0 (TID 18, ip-10-0-23-152.ec2.internal, executor 2, partition 1, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:47 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 6.5 KB, free: 9.2 GB)
+25/11/14 00:30:47 INFO TaskSetManager: Finished task 1.0 in stage 11.0 (TID 18) in 520 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:47 INFO TaskSetManager: Finished task 0.0 in stage 11.0 (TID 17) in 672 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:47 INFO YarnScheduler: Removed TaskSet 11.0, whose tasks have all completed, from pool 
+25/11/14 00:30:47 INFO DAGScheduler: ResultStage 11 (lookup at /home/hadoop/sg275_assignment4.py:88) finished in 0.676 s
+25/11/14 00:30:47 INFO DAGScheduler: Job 6 finished: lookup at /home/hadoop/sg275_assignment4.py:88, took 0.678953 s
+Document: 20_newsgroups/talk.politics.misc/176982
+Non-zero count vector entries (index, value):
+[(0, 9.0), (1, 3.0), (2, 3.0), (3, 6.0), (4, 1.0), (6, 4.0), (7, 2.0), (8, 1.0), (11, 3.0), (12, 1.0), (13, 1.0), (14, 2.0), (16, 2.0), (17, 3.0), (18, 1.0), (19, 1.0), (20, 1.0), (21, 1.0), (22, 2.0), (23, 2.0), (25, 3.0), (26, 3.0), (30, 1.0), (31, 1.0), (32, 1.0), (33, 1.0), (34, 1.0), (35, 1.0), (36, 1.0), (38, 1.0), (41, 2.0), (42, 1.0), (44, 1.0), (49, 1.0), (50, 1.0), (51, 1.0), (53, 1.0), (61, 1.0), (63, 1.0), (66, 2.0), (67, 1.0), (71, 1.0), (72, 3.0), (77, 1.0), (78, 1.0), (88, 1.0), (93, 2.0), (96, 1.0), (113, 1.0), (118, 1.0), (121, 3.0), (133, 1.0), (139, 1.0), (140, 1.0), (149, 1.0), (150, 1.0), (155, 1.0), (160, 1.0), (168, 1.0), (169, 1.0), (199, 1.0), (218, 1.0), (235, 2.0), (297, 2.0), (301, 1.0), (309, 1.0), (325, 1.0), (327, 1.0), (396, 1.0), (405, 1.0), (413, 1.0), (423, 1.0), (488, 1.0), (505, 1.0), (583, 1.0), (595, 1.0), (652, 1.0), (660, 1.0), (670, 1.0), (730, 1.0), (783, 1.0), (829, 1.0), (860, 1.0), (927, 1.0), (933, 1.0), (1040, 2.0), (1148, 1.0), (1319, 1.0), (1356, 1.0), (1407, 1.0), (1440, 1.0), (1513, 1.0), (1528, 1.0), (1648, 1.0), (1736, 1.0), (2038, 1.0), (2094, 1.0), (2111, 1.0), (2159, 4.0), (2293, 1.0), (2545, 1.0), (2671, 1.0), (2710, 2.0), (2745, 1.0), (3019, 1.0), (3039, 2.0), (3124, 2.0), (3416, 5.0), (3688, 2.0), (4133, 1.0), (4442, 2.0), (4680, 2.0), (4754, 1.0), (5303, 1.0), (5455, 1.0), (7259, 1.0), (7358, 1.0), (7650, 2.0), (8167, 1.0), (8381, 1.0), (8529, 1.0), (10018, 1.0), (11620, 1.0), (12092, 2.0), (14450, 1.0), (17761, 1.0)]
+
+25/11/14 00:30:47 INFO SparkContext: Starting job: lookup at /home/hadoop/sg275_assignment4.py:88
+25/11/14 00:30:47 INFO DAGScheduler: Got job 7 (lookup at /home/hadoop/sg275_assignment4.py:88) with 2 output partitions
+25/11/14 00:30:47 INFO DAGScheduler: Final stage: ResultStage 12 (lookup at /home/hadoop/sg275_assignment4.py:88)
+25/11/14 00:30:47 INFO DAGScheduler: Parents of final stage: List()
+25/11/14 00:30:47 INFO DAGScheduler: Missing parents: List()
+25/11/14 00:30:47 INFO DAGScheduler: Submitting ResultStage 12 (PythonRDD[25] at lookup at /home/hadoop/sg275_assignment4.py:88), which has no missing parents
+25/11/14 00:30:47 INFO MemoryStore: Block broadcast_13 stored as values in memory (estimated size 11.7 KB, free 911.4 MB)
+25/11/14 00:30:47 INFO MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 6.5 KB, free 911.4 MB)
+25/11/14 00:30:47 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 6.5 KB, free: 911.9 MB)
+25/11/14 00:30:47 INFO SparkContext: Created broadcast 13 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:47 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 12 (PythonRDD[25] at lookup at /home/hadoop/sg275_assignment4.py:88) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:47 INFO YarnScheduler: Adding task set 12.0 with 2 tasks
+25/11/14 00:30:47 INFO TaskSetManager: Starting task 0.0 in stage 12.0 (TID 19, ip-10-0-23-152.ec2.internal, executor 2, partition 0, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:47 INFO TaskSetManager: Starting task 1.0 in stage 12.0 (TID 20, ip-10-0-23-152.ec2.internal, executor 2, partition 1, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:47 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 6.5 KB, free: 9.2 GB)
+25/11/14 00:30:48 INFO TaskSetManager: Finished task 1.0 in stage 12.0 (TID 20) in 545 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:48 INFO TaskSetManager: Finished task 0.0 in stage 12.0 (TID 19) in 708 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:48 INFO YarnScheduler: Removed TaskSet 12.0, whose tasks have all completed, from pool 
+25/11/14 00:30:48 INFO DAGScheduler: ResultStage 12 (lookup at /home/hadoop/sg275_assignment4.py:88) finished in 0.714 s
+25/11/14 00:30:48 INFO DAGScheduler: Job 7 finished: lookup at /home/hadoop/sg275_assignment4.py:88, took 0.715603 s
+Document: 20_newsgroups/sci.med/59273
+Non-zero count vector entries (index, value):
+[(0, 4.0), (1, 2.0), (2, 3.0), (5, 1.0), (7, 1.0), (14, 2.0), (16, 1.0), (18, 1.0), (23, 3.0), (24, 1.0), (25, 2.0), (26, 1.0), (27, 2.0), (31, 1.0), (32, 1.0), (33, 1.0), (34, 1.0), (36, 1.0), (42, 1.0), (49, 1.0), (52, 1.0), (73, 1.0), (74, 1.0), (77, 2.0), (89, 1.0), (93, 1.0), (120, 2.0), (134, 1.0), (139, 2.0), (167, 1.0), (191, 1.0), (218, 1.0), (230, 1.0), (238, 1.0), (316, 1.0), (608, 2.0), (707, 1.0), (710, 1.0), (735, 1.0), (741, 1.0), (768, 1.0), (885, 1.0), (1141, 1.0), (1182, 1.0), (1367, 1.0), (1460, 1.0), (1612, 1.0), (1660, 1.0), (2066, 1.0), (2545, 2.0), (3051, 2.0), (3124, 1.0), (3883, 1.0), (3896, 1.0), (4732, 1.0), (5029, 1.0), (6888, 1.0), (8199, 2.0), (9102, 1.0), (12948, 1.0), (13251, 1.0), (14628, 1.0), (15567, 1.0)]
+
+25/11/14 00:30:48 INFO SparkContext: Starting job: lookup at /home/hadoop/sg275_assignment4.py:160
+25/11/14 00:30:48 INFO DAGScheduler: Got job 8 (lookup at /home/hadoop/sg275_assignment4.py:160) with 2 output partitions
+25/11/14 00:30:48 INFO DAGScheduler: Final stage: ResultStage 13 (lookup at /home/hadoop/sg275_assignment4.py:160)
+25/11/14 00:30:48 INFO DAGScheduler: Parents of final stage: List()
+25/11/14 00:30:48 INFO DAGScheduler: Missing parents: List()
+25/11/14 00:30:48 INFO DAGScheduler: Submitting ResultStage 13 (PythonRDD[26] at lookup at /home/hadoop/sg275_assignment4.py:160), which has no missing parents
+25/11/14 00:30:48 INFO MemoryStore: Block broadcast_14 stored as values in memory (estimated size 13.7 KB, free 911.4 MB)
+25/11/14 00:30:48 INFO MemoryStore: Block broadcast_14_piece0 stored as bytes in memory (estimated size 7.0 KB, free 911.4 MB)
+25/11/14 00:30:48 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 7.0 KB, free: 911.9 MB)
+25/11/14 00:30:48 INFO SparkContext: Created broadcast 14 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:48 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 13 (PythonRDD[26] at lookup at /home/hadoop/sg275_assignment4.py:160) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:48 INFO YarnScheduler: Adding task set 13.0 with 2 tasks
+25/11/14 00:30:48 INFO TaskSetManager: Starting task 0.0 in stage 13.0 (TID 21, ip-10-0-23-152.ec2.internal, executor 2, partition 0, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:48 INFO TaskSetManager: Starting task 1.0 in stage 13.0 (TID 22, ip-10-0-23-152.ec2.internal, executor 2, partition 1, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:48 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 7.0 KB, free: 9.2 GB)
+25/11/14 00:30:48 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 59.6 KB, free: 9.2 GB)
+25/11/14 00:30:49 INFO BlockManagerInfo: Added rdd_21_1 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 14.1 MB, free: 9.2 GB)
+25/11/14 00:30:49 INFO BlockManagerInfo: Added rdd_21_0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 15.6 MB, free: 9.2 GB)
+25/11/14 00:30:49 INFO TaskSetManager: Finished task 1.0 in stage 13.0 (TID 22) in 1218 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:50 INFO TaskSetManager: Finished task 0.0 in stage 13.0 (TID 21) in 1711 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:50 INFO YarnScheduler: Removed TaskSet 13.0, whose tasks have all completed, from pool 
+25/11/14 00:30:50 INFO DAGScheduler: ResultStage 13 (lookup at /home/hadoop/sg275_assignment4.py:160) finished in 1.717 s
+25/11/14 00:30:50 INFO DAGScheduler: Job 8 finished: lookup at /home/hadoop/sg275_assignment4.py:160, took 1.719438 s
+Document: 20_newsgroups/alt.atheism/51265
+Non-zero TF–IDF vector entries (index, value):
+[(0, 0.0018669640412554145), (1, 0.0014992764918133616), (2, 0.002150383312255144), (3, 0.0008991674985736609), (4, 0.0004271305806469172), (5, 0.0008458566153421998), (6, 0.0015511474339291453), (7, 0.0006257364293560386), (8, 0.0015662277583032846), (10, 0.0023327055387198925), (11, 0.0007473023142665625), (12, 0.0012439287966117263), (13, 0.0036281240172684193), (15, 0.0014377444749698043), (17, 0.002389441942796111), (18, 0.0013327226042747498), (19, 0.0013934276066720486), (21, 0.0024328825529664755), (23, 0.0018290793523192406), (24, 0.0015393458306789398), (25, 0.002183689270168543), (26, 0.004099562764167786), (27, 0.001537314965389669), (29, 0.003093161853030324), (32, 6.7821142692992e-06), (36, 0.000195608168723993), (38, 0.0008269586833193898), (42, 0.0003793925861828029), (44, 0.00220152223482728), (46, 0.0021673005539923906), (48, 0.006001733243465424), (50, 0.0022313897497951984), (53, 0.0014935199869796634), (56, 0.004651767201721668), (57, 0.005019339267164469), (59, 0.0028940122574567795), (66, 0.008950866758823395), (67, 0.0027061887085437775), (71, 0.0034337597899138927), (73, 0.004823431372642517), (86, 0.00306116184219718), (93, 0.0030763729009777308), (95, 0.0035789364483207464), (110, 0.003899544244632125), (117, 0.0037958070170134306), (127, 0.012132924050092697), (155, 0.004578713793307543), (164, 0.004606257192790508), (166, 0.0049493154510855675), (167, 0.009955378249287605), (197, 0.0052866628393530846), (199, 0.0052180164493620396), (209, 0.00512916874140501), (212, 0.02883928082883358), (219, 0.005248768255114555), (223, 0.00539239589124918), (283, 0.005995373707264662), (327, 0.006959671154618263), (344, 0.006197154521942139), (347, 0.006164198275655508), (367, 0.006494050845503807), (399, 0.00644740741699934), (412, 0.0069073522463440895), (459, 0.0066844020038843155), (486, 0.007003793027251959), (501, 0.007032094988971949), (566, 0.01535726897418499), (621, 0.008636342361569405), (684, 0.02605198323726654), (693, 0.0082906074821949), (698, 0.00783392135053873), (699, 0.007933003827929497), (724, 0.008040129207074642), (771, 0.007694336585700512), (849, 0.008481232449412346), (927, 0.008356616832315922), (1117, 0.00877230055630207), (1143, 0.009110664017498493), (1144, 0.008807564154267311), (1176, 0.009110664017498493), (1239, 0.009399443864822388), (1418, 0.009472520090639591), (1604, 0.020481349900364876), (1668, 0.009520242922008038), (1674, 0.009900926612317562), (1681, 0.010672013275325298), (1819, 0.012279201298952103), (1898, 0.009983440861105919), (2021, 0.010017280466854572), (2064, 0.011601882986724377), (2249, 0.010998346842825413), (2260, 0.011258810758590698), (2342, 0.010561855509877205), (2380, 0.010947027243673801), (2460, 0.011258810758590698), (2721, 0.021599018946290016), (2986, 0.010909264907240868), (3068, 0.01184975728392601), (3780, 0.011945073492825031), (4071, 0.012590986676514149), (4469, 0.012441897764801979), (5242, 0.060421574860811234), (5616, 0.012750247493386269), (5748, 0.02704983949661255), (5811, 0.0132371811196208), (6173, 0.01423522736877203), (6454, 0.013524919748306274), (6651, 0.04426874592900276), (7062, 0.028682757169008255), (7130, 0.0140363909304142), (7317, 0.014183908700942993), (7969, 0.014183908700942993), (8336, 0.02847045473754406), (8856, 0.014510240405797958), (9638, 0.014452585950493813), (11842, 0.015343046747148037), (12735, 0.015607660636305809), (14013, 0.015802349895238876), (14358, 0.01612868160009384), (15022, 0.016248447820544243), (16400, 0.01637469045817852), (16902, 0.016649704426527023), (17896, 0.016649704426527023)]
+
+25/11/14 00:30:50 INFO SparkContext: Starting job: lookup at /home/hadoop/sg275_assignment4.py:160
+25/11/14 00:30:50 INFO DAGScheduler: Got job 9 (lookup at /home/hadoop/sg275_assignment4.py:160) with 2 output partitions
+25/11/14 00:30:50 INFO DAGScheduler: Final stage: ResultStage 14 (lookup at /home/hadoop/sg275_assignment4.py:160)
+25/11/14 00:30:50 INFO DAGScheduler: Parents of final stage: List()
+25/11/14 00:30:50 INFO DAGScheduler: Missing parents: List()
+25/11/14 00:30:50 INFO DAGScheduler: Submitting ResultStage 14 (PythonRDD[27] at lookup at /home/hadoop/sg275_assignment4.py:160), which has no missing parents
+25/11/14 00:30:50 INFO MemoryStore: Block broadcast_15 stored as values in memory (estimated size 13.7 KB, free 911.4 MB)
+25/11/14 00:30:50 INFO MemoryStore: Block broadcast_15_piece0 stored as bytes in memory (estimated size 7.0 KB, free 911.4 MB)
+25/11/14 00:30:50 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 7.0 KB, free: 911.9 MB)
+25/11/14 00:30:50 INFO SparkContext: Created broadcast 15 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:50 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 14 (PythonRDD[27] at lookup at /home/hadoop/sg275_assignment4.py:160) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:50 INFO YarnScheduler: Adding task set 14.0 with 2 tasks
+25/11/14 00:30:50 INFO TaskSetManager: Starting task 0.0 in stage 14.0 (TID 23, ip-10-0-23-152.ec2.internal, executor 2, partition 0, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:50 INFO TaskSetManager: Starting task 1.0 in stage 14.0 (TID 24, ip-10-0-23-152.ec2.internal, executor 2, partition 1, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:50 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 7.0 KB, free: 9.2 GB)
+25/11/14 00:30:50 INFO TaskSetManager: Finished task 1.0 in stage 14.0 (TID 24) in 493 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:51 INFO TaskSetManager: Finished task 0.0 in stage 14.0 (TID 23) in 674 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:51 INFO YarnScheduler: Removed TaskSet 14.0, whose tasks have all completed, from pool 
+25/11/14 00:30:51 INFO DAGScheduler: ResultStage 14 (lookup at /home/hadoop/sg275_assignment4.py:160) finished in 0.679 s
+25/11/14 00:30:51 INFO DAGScheduler: Job 9 finished: lookup at /home/hadoop/sg275_assignment4.py:160, took 0.680591 s
+Document: 20_newsgroups/talk.politics.misc/176982
+Non-zero TF–IDF vector entries (index, value):
+[(0, 0.0015441194409504533), (1, 0.0009093437111005187), (2, 0.0013042542850598693), (3, 0.0018178821774199605), (4, 0.00043177331099286675), (6, 0.0015680077485740185), (7, 0.0012650757562369108), (8, 0.0007916259928606451), (11, 0.0022662754636257887), (12, 0.0012574497377499938), (13, 0.0012225201353430748), (16, 0.0023621623404324055), (17, 0.0036231214180588722), (18, 0.0013472087448462844), (19, 0.0014085735892876983), (20, 0.0014961435226723552), (21, 0.0012296634959056973), (22, 0.002750308020040393), (23, 0.003697921521961689), (25, 0.0033111374359577894), (26, 0.006216184701770544), (30, 0.002173008630052209), (32, 6.8558333623514045e-06), (35, 0.0018590579275041819), (36, 0.00019773434905800968), (38, 0.000835947401355952), (41, 0.004225465469062328), (42, 0.00038351642433553934), (44, 0.002225451869890094), (49, 0.0022430934477597475), (50, 0.0022556439507752657), (51, 0.002336191013455391), (53, 0.0015097539871931076), (61, 0.0018541333265602589), (63, 0.0029665902256965637), (66, 0.006032106000930071), (67, 0.0027356038335710764), (71, 0.003471083240583539), (72, 0.008987421169877052), (77, 0.002754107117652893), (78, 0.0036304439418017864), (88, 0.0030639793258160353), (93, 0.006219623610377312), (96, 0.0033377711661159992), (113, 0.003738963045179844), (118, 0.003930046223104), (121, 0.013474845327436924), (133, 0.004306712653487921), (139, 0.004501132760196924), (140, 0.004102132748812437), (149, 0.004461727570742369), (150, 0.003986877854913473), (155, 0.004628482274711132), (160, 0.004937194287776947), (168, 0.005077002570033073), (169, 0.0047225989401340485), (199, 0.005274733994156122), (218, 0.005432069301605225), (235, 0.013712508603930473), (297, 0.012280692346394062), (301, 0.00694185309112072), (309, 0.006449389271438122), (325, 0.0068220156244933605), (327, 0.007035319693386555), (396, 0.007226570975035429), (405, 0.0069151828065514565), (413, 0.008339956402778625), (423, 0.007120555732399225), (488, 0.007632818538695574), (505, 0.0077275484800338745), (583, 0.007567824795842171), (595, 0.008087236434221268), (652, 0.008397228084504604), (660, 0.007690426427870989), (670, 0.0077971601858735085), (730, 0.008179808966815472), (783, 0.008641313761472702), (829, 0.008768673054873943), (860, 0.008198766969144344), (927, 0.008447449654340744), (933, 0.008595834486186504), (1040, 0.01779634691774845), (1148, 0.009865453466773033), (1319, 0.009311162866652012), (1356, 0.009436407126486301), (1407, 0.009146287105977535), (1440, 0.009101220406591892), (1513, 0.009630696848034859), (1528, 0.009959878399968147), (1648, 0.01016963366419077), (1736, 0.009637690149247646), (2038, 0.010314371436834335), (2094, 0.010187247768044472), (2111, 0.010731679387390614), (2159, 0.04436725378036499), (2293, 0.010644250549376011), (2545, 0.01211458072066307), (2671, 0.011266728863120079), (2710, 0.023558977991342545), (2745, 0.012134668417274952), (3019, 0.012973646633327007), (3039, 0.02395711839199066), (3124, 0.022972218692302704), (3416, 0.07047268003225327), (3688, 0.024780170992016792), (4133, 0.012175364419817924), (4442, 0.025667889043688774), (4680, 0.03174732252955437), (4754, 0.012528965249657631), (5303, 0.013184258714318275), (5455, 0.012916769832372665), (7259, 0.013633549213409424), (7358, 0.016188833862543106), (7650, 0.030389292165637016), (8167, 0.014048703946173191), (8381, 0.014667960815131664), (8529, 0.014188961125910282), (10018, 0.015426993370056152), (11620, 0.015684736892580986), (12092, 0.03136947378516197), (14450, 0.016830679029226303), (17761, 0.01698300987482071)]
+
+25/11/14 00:30:51 INFO SparkContext: Starting job: lookup at /home/hadoop/sg275_assignment4.py:160
+25/11/14 00:30:51 INFO DAGScheduler: Got job 10 (lookup at /home/hadoop/sg275_assignment4.py:160) with 2 output partitions
+25/11/14 00:30:51 INFO DAGScheduler: Final stage: ResultStage 15 (lookup at /home/hadoop/sg275_assignment4.py:160)
+25/11/14 00:30:51 INFO DAGScheduler: Parents of final stage: List()
+25/11/14 00:30:51 INFO DAGScheduler: Missing parents: List()
+25/11/14 00:30:51 INFO DAGScheduler: Submitting ResultStage 15 (PythonRDD[28] at lookup at /home/hadoop/sg275_assignment4.py:160), which has no missing parents
+25/11/14 00:30:51 INFO MemoryStore: Block broadcast_16 stored as values in memory (estimated size 13.7 KB, free 911.4 MB)
+25/11/14 00:30:51 INFO MemoryStore: Block broadcast_16_piece0 stored as bytes in memory (estimated size 7.0 KB, free 911.4 MB)
+25/11/14 00:30:51 INFO BlockManagerInfo: Added broadcast_16_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 7.0 KB, free: 911.8 MB)
+25/11/14 00:30:51 INFO SparkContext: Created broadcast 16 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:51 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 15 (PythonRDD[28] at lookup at /home/hadoop/sg275_assignment4.py:160) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:51 INFO YarnScheduler: Adding task set 15.0 with 2 tasks
+25/11/14 00:30:51 INFO TaskSetManager: Starting task 0.0 in stage 15.0 (TID 25, ip-10-0-23-152.ec2.internal, executor 2, partition 0, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:51 INFO TaskSetManager: Starting task 1.0 in stage 15.0 (TID 26, ip-10-0-23-152.ec2.internal, executor 2, partition 1, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:51 INFO BlockManagerInfo: Added broadcast_16_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 7.0 KB, free: 9.2 GB)
+25/11/14 00:30:51 INFO TaskSetManager: Finished task 1.0 in stage 15.0 (TID 26) in 529 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:51 INFO TaskSetManager: Finished task 0.0 in stage 15.0 (TID 25) in 674 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:51 INFO YarnScheduler: Removed TaskSet 15.0, whose tasks have all completed, from pool 
+25/11/14 00:30:51 INFO DAGScheduler: ResultStage 15 (lookup at /home/hadoop/sg275_assignment4.py:160) finished in 0.678 s
+25/11/14 00:30:51 INFO DAGScheduler: Job 10 finished: lookup at /home/hadoop/sg275_assignment4.py:160, took 0.680317 s
+Document: 20_newsgroups/sci.med/59273
+Non-zero TF–IDF vector entries (index, value):
+[(0, 0.0015589464455842972), (1, 0.001377113163471222), (2, 0.002962750382721424), (5, 0.0009711687453091145), (7, 0.001436876249499619), (16, 0.002682949649170041), (18, 0.0030603259801864624), (23, 0.012600325047969818), (24, 0.003534794319421053), (25, 0.005014397669583559), (26, 0.004706905223429203), (27, 0.007060261443257332), (32, 1.557374525873456e-05), (36, 0.0004491743165999651), (42, 0.0008711977861821651), (49, 0.005095421802252531), (52, 0.00608254736289382), (73, 0.01107602845877409), (74, 0.012924696318805218), (77, 0.012512486428022385), (89, 0.007364899851381779), (93, 0.007064263802021742), (120, 0.0322195366024971), (134, 0.009306243620812893), (139, 0.02044958993792534), (167, 0.011430248618125916), (191, 0.011649404652416706), (218, 0.01233951561152935), (230, 0.01320049911737442), (238, 0.013033321127295494), (316, 0.015434549190104008), (608, 0.03776240348815918), (707, 0.0183135736733675), (710, 0.019355155527591705), (735, 0.01851310208439827), (741, 0.01786748878657818), (768, 0.01936507597565651), (885, 0.019567426294088364), (1141, 0.019516117870807648), (1182, 0.021940967068076134), (1367, 0.02105516940355301), (1460, 0.022087424993515015), (1612, 0.023409027606248856), (1660, 0.023242760449647903), (2066, 0.025079654529690742), (2545, 0.05503908172249794), (3051, 0.05881201848387718), (3124, 0.02609190344810486), (3883, 0.02687794156372547), (3896, 0.02794491872191429), (4732, 0.029536789283156395), (5029, 0.029949426651000977), (6888, 0.03223171457648277), (8199, 0.06937292218208313), (9102, 0.03731125220656395), (12948, 0.035629525780677795), (13251, 0.03790760412812233), (14628, 0.03760114312171936), (15567, 0.038578685373067856)]
+
+Query text:
+Graphics are pictures and movies created using computers – usually referring to image data created by a computer specifically with help from specialized graphical hardware and software. It is a vast and recent area in computer science. The phrase was coined by computer graphics researchers Verne Hudson and William Fetter of Boeing in 1960. It is often abbreviated as CG, though sometimes erroneously referred to as CGI. Important topics in computer graphics include user interface design, sprite graphics, vector graphics, 3D modeling, shaders, GPU design, implicit surface visualization with ray tracing, and computer vision, among others. The overall methodology depends heavily on the underlying sciences of geometry, optics, and physics. Computer graphics is responsible for displaying art and image data effectively and meaningfully to the user, and processing image data received from the physical world. The interaction and understanding of computers and interpretation of data has been made easier because of computer graphics. Computer graphic development has had a significant impact on many types of media and has revolutionized animation, movies, advertising, video games, and graphic design generally.
+25/11/14 00:30:51 INFO SparkContext: Starting job: takeOrdered at /home/hadoop/sg275_assignment4.py:230
+25/11/14 00:30:51 INFO DAGScheduler: Got job 11 (takeOrdered at /home/hadoop/sg275_assignment4.py:230) with 2 output partitions
+25/11/14 00:30:51 INFO DAGScheduler: Final stage: ResultStage 16 (takeOrdered at /home/hadoop/sg275_assignment4.py:230)
+25/11/14 00:30:51 INFO DAGScheduler: Parents of final stage: List()
+25/11/14 00:30:51 INFO DAGScheduler: Missing parents: List()
+25/11/14 00:30:51 INFO DAGScheduler: Submitting ResultStage 16 (PythonRDD[29] at takeOrdered at /home/hadoop/sg275_assignment4.py:230), which has no missing parents
+25/11/14 00:30:51 INFO MemoryStore: Block broadcast_17 stored as values in memory (estimated size 95.1 KB, free 911.3 MB)
+25/11/14 00:30:51 INFO MemoryStore: Block broadcast_17_piece0 stored as bytes in memory (estimated size 10.3 KB, free 911.3 MB)
+25/11/14 00:30:51 INFO BlockManagerInfo: Added broadcast_17_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 10.3 KB, free: 911.8 MB)
+25/11/14 00:30:51 INFO SparkContext: Created broadcast 17 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:51 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 16 (PythonRDD[29] at takeOrdered at /home/hadoop/sg275_assignment4.py:230) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:51 INFO YarnScheduler: Adding task set 16.0 with 2 tasks
+25/11/14 00:30:51 INFO TaskSetManager: Starting task 0.0 in stage 16.0 (TID 27, ip-10-0-23-152.ec2.internal, executor 2, partition 0, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:51 INFO TaskSetManager: Starting task 1.0 in stage 16.0 (TID 28, ip-10-0-23-152.ec2.internal, executor 2, partition 1, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:51 INFO BlockManagerInfo: Added broadcast_17_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 10.3 KB, free: 9.2 GB)
+25/11/14 00:30:52 INFO BlockManagerInfo: Added rdd_22_1 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 14.2 MB, free: 9.2 GB)
+25/11/14 00:30:52 INFO BlockManagerInfo: Added rdd_22_0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 15.7 MB, free: 9.2 GB)
+25/11/14 00:30:52 INFO TaskSetManager: Finished task 1.0 in stage 16.0 (TID 28) in 1072 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:53 INFO TaskSetManager: Finished task 0.0 in stage 16.0 (TID 27) in 1364 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:53 INFO YarnScheduler: Removed TaskSet 16.0, whose tasks have all completed, from pool 
+25/11/14 00:30:53 INFO DAGScheduler: ResultStage 16 (takeOrdered at /home/hadoop/sg275_assignment4.py:230) finished in 1.369 s
+25/11/14 00:30:53 INFO DAGScheduler: Job 11 finished: takeOrdered at /home/hadoop/sg275_assignment4.py:230, took 1.371410 s
+k nearest neighbors for query:
+  distance = 0.147183, docID = 20_newsgroups/comp.graphics/38778, category = comp.graphics
+  distance = 0.149217, docID = 20_newsgroups/comp.graphics/38376, category = comp.graphics
+  distance = 0.149217, docID = 20_newsgroups/comp.graphics/38853, category = comp.graphics
+  distance = 0.149767, docID = 20_newsgroups/comp.graphics/38852, category = comp.graphics
+  distance = 0.149837, docID = 20_newsgroups/comp.graphics/38375, category = comp.graphics
+Predicted label: comp.graphics
+
+Predicted category: comp.graphics
+--------------------------------------------------------------------------------
+Query text:
+A deity is a concept conceived in diverse ways in various cultures, typically as a natural or supernatural being considered divine or sacred. Monotheistic religions accept only one Deity (predominantly referred to as God), polytheistic religions accept and worship multiple deities, henotheistic religions accept one supreme deity without denying other deities considering them as equivalent aspects of the same divine principle, while several non-theistic religions deny any supreme eternal creator deity but accept a pantheon of deities which live, die and are reborn just like any other being. A male deity is a god, while a female deity is a goddess. The Oxford reference defines deity as a god or goddess (in a polytheistic religion), or anything revered as divine. C. Scott Littleton defines a deity as a being with powers greater than those of ordinary humans, but who interacts with humans, positively or negatively, in ways that carry humans to new levels of consciousness beyond the grounded preoccupations of ordinary life.
+25/11/14 00:30:53 INFO SparkContext: Starting job: takeOrdered at /home/hadoop/sg275_assignment4.py:230
+25/11/14 00:30:53 INFO DAGScheduler: Got job 12 (takeOrdered at /home/hadoop/sg275_assignment4.py:230) with 2 output partitions
+25/11/14 00:30:53 INFO DAGScheduler: Final stage: ResultStage 17 (takeOrdered at /home/hadoop/sg275_assignment4.py:230)
+25/11/14 00:30:53 INFO DAGScheduler: Parents of final stage: List()
+25/11/14 00:30:53 INFO DAGScheduler: Missing parents: List()
+25/11/14 00:30:53 INFO DAGScheduler: Submitting ResultStage 17 (PythonRDD[30] at takeOrdered at /home/hadoop/sg275_assignment4.py:230), which has no missing parents
+25/11/14 00:30:53 INFO MemoryStore: Block broadcast_18 stored as values in memory (estimated size 95.1 KB, free 911.2 MB)
+25/11/14 00:30:53 INFO MemoryStore: Block broadcast_18_piece0 stored as bytes in memory (estimated size 10.1 KB, free 911.2 MB)
+25/11/14 00:30:53 INFO BlockManagerInfo: Added broadcast_18_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 10.1 KB, free: 911.8 MB)
+25/11/14 00:30:53 INFO SparkContext: Created broadcast 18 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:53 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 17 (PythonRDD[30] at takeOrdered at /home/hadoop/sg275_assignment4.py:230) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:53 INFO YarnScheduler: Adding task set 17.0 with 2 tasks
+25/11/14 00:30:53 INFO TaskSetManager: Starting task 0.0 in stage 17.0 (TID 29, ip-10-0-23-152.ec2.internal, executor 2, partition 0, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:53 INFO TaskSetManager: Starting task 1.0 in stage 17.0 (TID 30, ip-10-0-23-152.ec2.internal, executor 2, partition 1, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:53 INFO BlockManagerInfo: Added broadcast_18_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 10.1 KB, free: 9.2 GB)
+25/11/14 00:30:53 INFO TaskSetManager: Finished task 1.0 in stage 17.0 (TID 30) in 506 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:53 INFO TaskSetManager: Finished task 0.0 in stage 17.0 (TID 29) in 627 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:53 INFO YarnScheduler: Removed TaskSet 17.0, whose tasks have all completed, from pool 
+25/11/14 00:30:53 INFO DAGScheduler: ResultStage 17 (takeOrdered at /home/hadoop/sg275_assignment4.py:230) finished in 0.631 s
+25/11/14 00:30:53 INFO DAGScheduler: Job 12 finished: takeOrdered at /home/hadoop/sg275_assignment4.py:230, took 0.633737 s
+k nearest neighbors for query:
+  distance = 0.203819, docID = 20_newsgroups/soc.religion.christian/20758, category = soc.religion.christian
+  distance = 0.206610, docID = 20_newsgroups/talk.religion.misc/83829, category = talk.religion.misc
+  distance = 0.207407, docID = 20_newsgroups/alt.atheism/54230, category = alt.atheism
+  distance = 0.207407, docID = 20_newsgroups/talk.religion.misc/84402, category = talk.religion.misc
+  distance = 0.207750, docID = 20_newsgroups/talk.religion.misc/83884, category = talk.religion.misc
+Predicted label: talk.religion.misc
+
+Predicted category: talk.religion.misc
+--------------------------------------------------------------------------------
+Query text:
+Egypt, officially the Arab Republic of Egypt, is a transcontinental country spanning the northeast corner of Africa and southwest corner of Asia by a land bridge formed by the Sinai Peninsula. Egypt is a Mediterranean country bordered by the Gaza Strip and Israel to the northeast, the Gulf of Aqaba to the east, the Red Sea to the east and south, Sudan to the south, and Libya to the west. Across the Gulf of Aqaba lies Jordan, and across from the Sinai Peninsula lies Saudi Arabia, although Jordan and Saudi Arabia do not share a land border with Egypt. It is the worlds only contiguous Eurafrasian nation. Egypt has among the longest histories of any modern country, emerging as one of the worlds first nation states in the tenth millennium BC. Considered a cradle of civilisation, Ancient Egypt experienced some of the earliest developments of writing, agriculture, urbanisation, organised religion and central government. Iconic monuments such as the Giza Necropolis and its Great Sphinx, as well the ruins of Memphis, Thebes, Karnak, and the Valley of the Kings, reflect this legacy and remain a significant focus of archaeological study and popular interest worldwide. Egypts rich cultural heritage is an integral part of its national identity, which has endured, and at times assimilated, various foreign influences, including Greek, Persian, Roman, Arab, Ottoman, and European. One of the earliest centers of Christianity, Egypt was Islamised in the seventh century and remains a predominantly Muslim country, albeit with a significant Christian minority.
+25/11/14 00:30:53 INFO SparkContext: Starting job: takeOrdered at /home/hadoop/sg275_assignment4.py:230
+25/11/14 00:30:53 INFO DAGScheduler: Got job 13 (takeOrdered at /home/hadoop/sg275_assignment4.py:230) with 2 output partitions
+25/11/14 00:30:53 INFO DAGScheduler: Final stage: ResultStage 18 (takeOrdered at /home/hadoop/sg275_assignment4.py:230)
+25/11/14 00:30:53 INFO DAGScheduler: Parents of final stage: List()
+25/11/14 00:30:53 INFO DAGScheduler: Missing parents: List()
+25/11/14 00:30:53 INFO DAGScheduler: Submitting ResultStage 18 (PythonRDD[31] at takeOrdered at /home/hadoop/sg275_assignment4.py:230), which has no missing parents
+25/11/14 00:30:53 INFO MemoryStore: Block broadcast_19 stored as values in memory (estimated size 95.2 KB, free 911.1 MB)
+25/11/14 00:30:53 INFO MemoryStore: Block broadcast_19_piece0 stored as bytes in memory (estimated size 10.5 KB, free 911.1 MB)
+25/11/14 00:30:53 INFO BlockManagerInfo: Added broadcast_19_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 10.5 KB, free: 911.8 MB)
+25/11/14 00:30:53 INFO SparkContext: Created broadcast 19 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:53 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 18 (PythonRDD[31] at takeOrdered at /home/hadoop/sg275_assignment4.py:230) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:53 INFO YarnScheduler: Adding task set 18.0 with 2 tasks
+25/11/14 00:30:53 INFO TaskSetManager: Starting task 0.0 in stage 18.0 (TID 31, ip-10-0-23-152.ec2.internal, executor 2, partition 0, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:53 INFO TaskSetManager: Starting task 1.0 in stage 18.0 (TID 32, ip-10-0-23-152.ec2.internal, executor 2, partition 1, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:53 INFO BlockManagerInfo: Added broadcast_19_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 10.5 KB, free: 9.2 GB)
+25/11/14 00:30:54 INFO TaskSetManager: Finished task 1.0 in stage 18.0 (TID 32) in 519 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:54 INFO TaskSetManager: Finished task 0.0 in stage 18.0 (TID 31) in 700 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:54 INFO YarnScheduler: Removed TaskSet 18.0, whose tasks have all completed, from pool 
+25/11/14 00:30:54 INFO DAGScheduler: ResultStage 18 (takeOrdered at /home/hadoop/sg275_assignment4.py:230) finished in 0.704 s
+25/11/14 00:30:54 INFO DAGScheduler: Job 13 finished: takeOrdered at /home/hadoop/sg275_assignment4.py:230, took 0.706493 s
+k nearest neighbors for query:
+  distance = 0.150262, docID = 20_newsgroups/sci.crypt/16123, category = sci.crypt
+  distance = 0.150647, docID = 20_newsgroups/talk.politics.misc/179058, category = talk.politics.misc
+  distance = 0.151409, docID = 20_newsgroups/soc.religion.christian/21396, category = soc.religion.christian
+  distance = 0.151436, docID = 20_newsgroups/alt.atheism/53519, category = alt.atheism
+  distance = 0.151790, docID = 20_newsgroups/talk.politics.mideast/77355, category = talk.politics.mideast
+Predicted label: sci.crypt
+
+Predicted category: sci.crypt
+--------------------------------------------------------------------------------
+Query text:
+The term atheism originated from the Greek atheos, meaning without god(s), used as a pejorative term applied to those thought to reject the gods worshiped by the larger society. With the spread of freethought, skeptical inquiry, and subsequent increase in criticism of religion, application of the term narrowed in scope. The first individuals to identify themselves using the word atheist lived in the 18th century during the Age of Enlightenment. The French Revolution, noted for its unprecedented atheism, witnessed the first major political movement in history to advocate for the supremacy of human reason. Arguments for atheism range from the philosophical to social and historical approaches. Rationales for not believing in deities include arguments that there is a lack of empirical evidence; the problem of evil; the argument from inconsistent revelations; the rejection of concepts that cannot be falsified; and the argument from nonbelief. Although some atheists have adopted secular philosophies (eg. humanism and skepticism), there is no one ideology or set of behaviors to which all atheists adhere.
+25/11/14 00:30:54 INFO SparkContext: Starting job: takeOrdered at /home/hadoop/sg275_assignment4.py:230
+25/11/14 00:30:54 INFO DAGScheduler: Got job 14 (takeOrdered at /home/hadoop/sg275_assignment4.py:230) with 2 output partitions
+25/11/14 00:30:54 INFO DAGScheduler: Final stage: ResultStage 19 (takeOrdered at /home/hadoop/sg275_assignment4.py:230)
+25/11/14 00:30:54 INFO DAGScheduler: Parents of final stage: List()
+25/11/14 00:30:54 INFO DAGScheduler: Missing parents: List()
+25/11/14 00:30:54 INFO DAGScheduler: Submitting ResultStage 19 (PythonRDD[32] at takeOrdered at /home/hadoop/sg275_assignment4.py:230), which has no missing parents
+25/11/14 00:30:54 INFO MemoryStore: Block broadcast_20 stored as values in memory (estimated size 95.2 KB, free 911.0 MB)
+25/11/14 00:30:54 INFO MemoryStore: Block broadcast_20_piece0 stored as bytes in memory (estimated size 10.3 KB, free 911.0 MB)
+25/11/14 00:30:54 INFO BlockManagerInfo: Added broadcast_20_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 10.3 KB, free: 911.8 MB)
+25/11/14 00:30:54 INFO SparkContext: Created broadcast 20 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:54 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 19 (PythonRDD[32] at takeOrdered at /home/hadoop/sg275_assignment4.py:230) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:54 INFO YarnScheduler: Adding task set 19.0 with 2 tasks
+25/11/14 00:30:54 INFO TaskSetManager: Starting task 0.0 in stage 19.0 (TID 33, ip-10-0-23-152.ec2.internal, executor 2, partition 0, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:54 INFO TaskSetManager: Starting task 1.0 in stage 19.0 (TID 34, ip-10-0-23-152.ec2.internal, executor 2, partition 1, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:54 INFO BlockManagerInfo: Added broadcast_20_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 10.3 KB, free: 9.2 GB)
+25/11/14 00:30:55 INFO TaskSetManager: Finished task 1.0 in stage 19.0 (TID 34) in 500 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:55 INFO TaskSetManager: Finished task 0.0 in stage 19.0 (TID 33) in 644 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:55 INFO YarnScheduler: Removed TaskSet 19.0, whose tasks have all completed, from pool 
+25/11/14 00:30:55 INFO DAGScheduler: ResultStage 19 (takeOrdered at /home/hadoop/sg275_assignment4.py:230) finished in 0.649 s
+25/11/14 00:30:55 INFO DAGScheduler: Job 14 finished: takeOrdered at /home/hadoop/sg275_assignment4.py:230, took 0.651318 s
+k nearest neighbors for query:
+  distance = 0.122882, docID = 20_newsgroups/alt.atheism/51060, category = alt.atheism
+  distance = 0.126601, docID = 20_newsgroups/alt.atheism/52499, category = alt.atheism
+  distance = 0.128369, docID = 20_newsgroups/soc.religion.christian/21458, category = soc.religion.christian
+  distance = 0.129850, docID = 20_newsgroups/alt.atheism/54163, category = alt.atheism
+  distance = 0.130357, docID = 20_newsgroups/alt.atheism/49960, category = alt.atheism
+Predicted label: alt.atheism
+
+Predicted category: alt.atheism
+--------------------------------------------------------------------------------
+Query text:
+President Dwight D. Eisenhower established NASA in 1958 with a distinctly civilian (rather than military) orientation encouraging peaceful applications in space science. The National Aeronautics and Space Act was passed on July 29, 1958, disestablishing NASAs predecessor, the National Advisory Committee for Aeronautics (NACA). The new agency became operational on October 1, 1958. Since that time, most US space exploration efforts have been led by NASA, including the Apollo moon-landing missions, the Skylab space station, and later the Space Shuttle. Currently, NASA is supporting the International Space Station and is overseeing the development of the Orion Multi-Purpose Crew Vehicle, the Space Launch System and Commercial Crew vehicles. The agency is also responsible for the Launch Services Program (LSP) which provides oversight of launch operations and countdown management for unmanned NASA launches.
+25/11/14 00:30:55 INFO SparkContext: Starting job: takeOrdered at /home/hadoop/sg275_assignment4.py:230
+25/11/14 00:30:55 INFO DAGScheduler: Got job 15 (takeOrdered at /home/hadoop/sg275_assignment4.py:230) with 2 output partitions
+25/11/14 00:30:55 INFO DAGScheduler: Final stage: ResultStage 20 (takeOrdered at /home/hadoop/sg275_assignment4.py:230)
+25/11/14 00:30:55 INFO DAGScheduler: Parents of final stage: List()
+25/11/14 00:30:55 INFO DAGScheduler: Missing parents: List()
+25/11/14 00:30:55 INFO DAGScheduler: Submitting ResultStage 20 (PythonRDD[33] at takeOrdered at /home/hadoop/sg275_assignment4.py:230), which has no missing parents
+25/11/14 00:30:55 INFO MemoryStore: Block broadcast_21 stored as values in memory (estimated size 95.1 KB, free 910.9 MB)
+25/11/14 00:30:55 INFO MemoryStore: Block broadcast_21_piece0 stored as bytes in memory (estimated size 10.1 KB, free 910.9 MB)
+25/11/14 00:30:55 INFO BlockManagerInfo: Added broadcast_21_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 10.1 KB, free: 911.8 MB)
+25/11/14 00:30:55 INFO SparkContext: Created broadcast 21 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:55 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 20 (PythonRDD[33] at takeOrdered at /home/hadoop/sg275_assignment4.py:230) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:55 INFO YarnScheduler: Adding task set 20.0 with 2 tasks
+25/11/14 00:30:55 INFO TaskSetManager: Starting task 0.0 in stage 20.0 (TID 35, ip-10-0-23-152.ec2.internal, executor 2, partition 0, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:55 INFO TaskSetManager: Starting task 1.0 in stage 20.0 (TID 36, ip-10-0-23-152.ec2.internal, executor 2, partition 1, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:55 INFO BlockManagerInfo: Added broadcast_21_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 10.1 KB, free: 9.2 GB)
+25/11/14 00:30:55 INFO TaskSetManager: Finished task 1.0 in stage 20.0 (TID 36) in 547 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:55 INFO TaskSetManager: Finished task 0.0 in stage 20.0 (TID 35) in 667 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:55 INFO YarnScheduler: Removed TaskSet 20.0, whose tasks have all completed, from pool 
+25/11/14 00:30:55 INFO DAGScheduler: ResultStage 20 (takeOrdered at /home/hadoop/sg275_assignment4.py:230) finished in 0.707 s
+25/11/14 00:30:55 INFO DAGScheduler: Job 15 finished: takeOrdered at /home/hadoop/sg275_assignment4.py:230, took 0.709118 s
+k nearest neighbors for query:
+  distance = 0.171573, docID = 20_newsgroups/sci.space/59908, category = sci.space
+  distance = 0.171849, docID = 20_newsgroups/sci.space/60842, category = sci.space
+  distance = 0.172092, docID = 20_newsgroups/sci.space/61207, category = sci.space
+  distance = 0.174616, docID = 20_newsgroups/sci.space/59872, category = sci.space
+  distance = 0.175048, docID = 20_newsgroups/sci.space/59849, category = sci.space
+Predicted label: sci.space
+
+Predicted category: sci.space
+--------------------------------------------------------------------------------
+Query text:
+The transistor is the fundamental building block of modern electronic devices, and is ubiquitous in modern electronic systems. First conceived by Julius Lilienfeld in 1926 and practically implemented in 1947 by American physicists John Bardeen, Walter Brattain, and William Shockley, the transistor revolutionized the field of electronics, and paved the way for smaller and cheaper radios, calculators, and computers, among other things. The transistor is on the list of IEEE milestones in electronics, and Bardeen, Brattain, and Shockley shared the 1956 Nobel Prize in Physics for their achievement.
+25/11/14 00:30:55 INFO SparkContext: Starting job: takeOrdered at /home/hadoop/sg275_assignment4.py:230
+25/11/14 00:30:55 INFO DAGScheduler: Got job 16 (takeOrdered at /home/hadoop/sg275_assignment4.py:230) with 2 output partitions
+25/11/14 00:30:55 INFO DAGScheduler: Final stage: ResultStage 21 (takeOrdered at /home/hadoop/sg275_assignment4.py:230)
+25/11/14 00:30:55 INFO DAGScheduler: Parents of final stage: List()
+25/11/14 00:30:55 INFO DAGScheduler: Missing parents: List()
+25/11/14 00:30:55 INFO DAGScheduler: Submitting ResultStage 21 (PythonRDD[34] at takeOrdered at /home/hadoop/sg275_assignment4.py:230), which has no missing parents
+25/11/14 00:30:55 INFO MemoryStore: Block broadcast_22 stored as values in memory (estimated size 95.1 KB, free 910.8 MB)
+25/11/14 00:30:55 INFO MemoryStore: Block broadcast_22_piece0 stored as bytes in memory (estimated size 9.8 KB, free 910.8 MB)
+25/11/14 00:30:55 INFO BlockManagerInfo: Added broadcast_22_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 9.8 KB, free: 911.8 MB)
+25/11/14 00:30:55 INFO SparkContext: Created broadcast 22 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:55 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 21 (PythonRDD[34] at takeOrdered at /home/hadoop/sg275_assignment4.py:230) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:55 INFO YarnScheduler: Adding task set 21.0 with 2 tasks
+25/11/14 00:30:55 INFO TaskSetManager: Starting task 0.0 in stage 21.0 (TID 37, ip-10-0-23-152.ec2.internal, executor 2, partition 0, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:55 INFO TaskSetManager: Starting task 1.0 in stage 21.0 (TID 38, ip-10-0-23-152.ec2.internal, executor 2, partition 1, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:55 INFO BlockManagerInfo: Added broadcast_22_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 9.8 KB, free: 9.2 GB)
+25/11/14 00:30:56 INFO TaskSetManager: Finished task 1.0 in stage 21.0 (TID 38) in 478 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:56 INFO TaskSetManager: Finished task 0.0 in stage 21.0 (TID 37) in 617 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:56 INFO YarnScheduler: Removed TaskSet 21.0, whose tasks have all completed, from pool 
+25/11/14 00:30:56 INFO DAGScheduler: ResultStage 21 (takeOrdered at /home/hadoop/sg275_assignment4.py:230) finished in 0.623 s
+25/11/14 00:30:56 INFO DAGScheduler: Job 16 finished: takeOrdered at /home/hadoop/sg275_assignment4.py:230, took 0.624142 s
+k nearest neighbors for query:
+  distance = 0.220451, docID = 20_newsgroups/sci.crypt/16123, category = sci.crypt
+  distance = 0.220632, docID = 20_newsgroups/talk.politics.misc/179058, category = talk.politics.misc
+  distance = 0.220682, docID = 20_newsgroups/sci.electronics/54148, category = sci.electronics
+  distance = 0.221209, docID = 20_newsgroups/talk.politics.mideast/76266, category = talk.politics.mideast
+  distance = 0.221814, docID = 20_newsgroups/alt.atheism/52499, category = alt.atheism
+Predicted label: sci.crypt
+
+Predicted category: sci.crypt
+--------------------------------------------------------------------------------
+Query text:
+The Colt Single Action Army which is also known as the Single Action Army, SAA, Model P, Peacemaker, M1873, and Colt .45 is a single-action revolver with a revolving cylinder holding six metallic cartridges. It was designed for the U.S. government service revolver trials of 1872 by Colts Patent Firearms Manufacturing Company – todays Colts Manufacturing Company – and was adopted as the standard military service revolver until 1892. The Colt SAA has been offered in over 30 different calibers and various barrel lengths. Its overall appearance has remained consistent since 1873. Colt has discontinued its production twice, but brought it back due to popular demand. The revolver was popular with ranchers, lawmen, and outlaws alike, but as of the early 21st century, models are mostly bought by collectors and re-enactors. Its design has influenced the production of numerous other models from other companies.
+25/11/14 00:30:56 INFO SparkContext: Starting job: takeOrdered at /home/hadoop/sg275_assignment4.py:230
+25/11/14 00:30:56 INFO DAGScheduler: Got job 17 (takeOrdered at /home/hadoop/sg275_assignment4.py:230) with 2 output partitions
+25/11/14 00:30:56 INFO DAGScheduler: Final stage: ResultStage 22 (takeOrdered at /home/hadoop/sg275_assignment4.py:230)
+25/11/14 00:30:56 INFO DAGScheduler: Parents of final stage: List()
+25/11/14 00:30:56 INFO DAGScheduler: Missing parents: List()
+25/11/14 00:30:56 INFO DAGScheduler: Submitting ResultStage 22 (PythonRDD[35] at takeOrdered at /home/hadoop/sg275_assignment4.py:230), which has no missing parents
+25/11/14 00:30:56 INFO MemoryStore: Block broadcast_23 stored as values in memory (estimated size 95.1 KB, free 910.7 MB)
+25/11/14 00:30:56 INFO MemoryStore: Block broadcast_23_piece0 stored as bytes in memory (estimated size 10.1 KB, free 910.7 MB)
+25/11/14 00:30:56 INFO BlockManagerInfo: Added broadcast_23_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 10.1 KB, free: 911.8 MB)
+25/11/14 00:30:56 INFO SparkContext: Created broadcast 23 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:56 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 22 (PythonRDD[35] at takeOrdered at /home/hadoop/sg275_assignment4.py:230) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:56 INFO YarnScheduler: Adding task set 22.0 with 2 tasks
+25/11/14 00:30:56 INFO TaskSetManager: Starting task 0.0 in stage 22.0 (TID 39, ip-10-0-23-152.ec2.internal, executor 2, partition 0, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:56 INFO TaskSetManager: Starting task 1.0 in stage 22.0 (TID 40, ip-10-0-23-152.ec2.internal, executor 2, partition 1, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:56 INFO BlockManagerInfo: Added broadcast_23_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 10.1 KB, free: 9.2 GB)
+25/11/14 00:30:57 INFO TaskSetManager: Finished task 1.0 in stage 22.0 (TID 40) in 443 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:57 INFO TaskSetManager: Finished task 0.0 in stage 22.0 (TID 39) in 614 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:57 INFO YarnScheduler: Removed TaskSet 22.0, whose tasks have all completed, from pool 
+25/11/14 00:30:57 INFO DAGScheduler: ResultStage 22 (takeOrdered at /home/hadoop/sg275_assignment4.py:230) finished in 0.618 s
+25/11/14 00:30:57 INFO DAGScheduler: Job 17 finished: takeOrdered at /home/hadoop/sg275_assignment4.py:230, took 0.619738 s
+k nearest neighbors for query:
+  distance = 0.180410, docID = 20_newsgroups/talk.politics.guns/54168, category = talk.politics.guns
+  distance = 0.184111, docID = 20_newsgroups/talk.politics.guns/54231, category = talk.politics.guns
+  distance = 0.185446, docID = 20_newsgroups/talk.politics.guns/54120, category = talk.politics.guns
+  distance = 0.190371, docID = 20_newsgroups/talk.politics.guns/54128, category = talk.politics.guns
+  distance = 0.192530, docID = 20_newsgroups/sci.crypt/16123, category = sci.crypt
+Predicted label: talk.politics.guns
+
+Predicted category: talk.politics.guns
+--------------------------------------------------------------------------------
+Query text:
+Howe was recruited by the Red Wings and made his NHL debut in 1946. He led the league in scoring each year from 1950 to 1954, then again in 1957 and 1963. He ranked among the top ten in league scoring for 21 consecutive years and set a league record for points in a season (95) in 1953. He won the Stanley Cup with the Red Wings four times, won six Hart Trophies as the leagues most valuable player, and won six Art Ross Trophies as the leading scorer. Howe retired in 1971 and was inducted into the Hockey Hall of Fame the next year. However, he came back two years later to join his sons Mark and Marty on the Houston Aeros of the WHA. Although in his mid-40s, he scored over 100 points twice in six years. He made a brief return to the NHL in 1979–80, playing one season with the Hartford Whalers, then retired at the age of 52. His involvement with the WHA was central to their brief pre-NHL merger success and forced the NHL to expand their recruitment to European talent and to expand to new markets.
+25/11/14 00:30:57 INFO SparkContext: Starting job: takeOrdered at /home/hadoop/sg275_assignment4.py:230
+25/11/14 00:30:57 INFO DAGScheduler: Got job 18 (takeOrdered at /home/hadoop/sg275_assignment4.py:230) with 2 output partitions
+25/11/14 00:30:57 INFO DAGScheduler: Final stage: ResultStage 23 (takeOrdered at /home/hadoop/sg275_assignment4.py:230)
+25/11/14 00:30:57 INFO DAGScheduler: Parents of final stage: List()
+25/11/14 00:30:57 INFO DAGScheduler: Missing parents: List()
+25/11/14 00:30:57 INFO DAGScheduler: Submitting ResultStage 23 (PythonRDD[36] at takeOrdered at /home/hadoop/sg275_assignment4.py:230), which has no missing parents
+25/11/14 00:30:57 INFO MemoryStore: Block broadcast_24 stored as values in memory (estimated size 95.1 KB, free 910.6 MB)
+25/11/14 00:30:57 INFO MemoryStore: Block broadcast_24_piece0 stored as bytes in memory (estimated size 10.2 KB, free 910.6 MB)
+25/11/14 00:30:57 INFO BlockManagerInfo: Added broadcast_24_piece0 in memory on ip-10-0-25-18.ec2.internal:44803 (size: 10.2 KB, free: 911.8 MB)
+25/11/14 00:30:57 INFO SparkContext: Created broadcast 24 from broadcast at DAGScheduler.scala:1297
+25/11/14 00:30:57 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 23 (PythonRDD[36] at takeOrdered at /home/hadoop/sg275_assignment4.py:230) (first 15 tasks are for partitions Vector(0, 1))
+25/11/14 00:30:57 INFO YarnScheduler: Adding task set 23.0 with 2 tasks
+25/11/14 00:30:57 INFO TaskSetManager: Starting task 0.0 in stage 23.0 (TID 41, ip-10-0-23-152.ec2.internal, executor 2, partition 0, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:57 INFO TaskSetManager: Starting task 1.0 in stage 23.0 (TID 42, ip-10-0-23-152.ec2.internal, executor 2, partition 1, PROCESS_LOCAL, 8245 bytes)
+25/11/14 00:30:57 INFO BlockManagerInfo: Added broadcast_24_piece0 in memory on ip-10-0-23-152.ec2.internal:40245 (size: 10.2 KB, free: 9.2 GB)
+25/11/14 00:30:57 INFO TaskSetManager: Finished task 1.0 in stage 23.0 (TID 42) in 493 ms on ip-10-0-23-152.ec2.internal (executor 2) (1/2)
+25/11/14 00:30:57 INFO TaskSetManager: Finished task 0.0 in stage 23.0 (TID 41) in 617 ms on ip-10-0-23-152.ec2.internal (executor 2) (2/2)
+25/11/14 00:30:57 INFO YarnScheduler: Removed TaskSet 23.0, whose tasks have all completed, from pool 
+25/11/14 00:30:57 INFO DAGScheduler: ResultStage 23 (takeOrdered at /home/hadoop/sg275_assignment4.py:230) finished in 0.621 s
+25/11/14 00:30:57 INFO DAGScheduler: Job 18 finished: takeOrdered at /home/hadoop/sg275_assignment4.py:230, took 0.622890 s
+k nearest neighbors for query:
+  distance = 0.131879, docID = 20_newsgroups/rec.sport.hockey/53468, category = rec.sport.hockey
+  distance = 0.137873, docID = 20_newsgroups/talk.politics.mideast/76266, category = talk.politics.mideast
+  distance = 0.138086, docID = 20_newsgroups/sci.crypt/16123, category = sci.crypt
+  distance = 0.138155, docID = 20_newsgroups/rec.sport.baseball/104343, category = rec.sport.baseball
+  distance = 0.138588, docID = 20_newsgroups/talk.politics.misc/179058, category = talk.politics.misc
+Predicted label: rec.sport.hockey
+
+Predicted category: rec.sport.hockey
+--------------------------------------------------------------------------------
+25/11/14 00:30:57 INFO SparkContext: Invoking stop() from shutdown hook
+25/11/14 00:30:57 INFO SparkUI: Stopped Spark web UI at http://ip-10-0-25-18.ec2.internal:4040
+25/11/14 00:30:57 INFO YarnClientSchedulerBackend: Interrupting monitor thread
+25/11/14 00:30:57 INFO YarnClientSchedulerBackend: Shutting down all executors
+25/11/14 00:30:57 INFO YarnSchedulerBackend$YarnDriverEndpoint: Asking each executor to shut down
+25/11/14 00:30:57 INFO SchedulerExtensionServices: Stopping SchedulerExtensionServices
+(serviceOption=None,
+ services=List(),
+ started=false)
+25/11/14 00:30:57 INFO YarnClientSchedulerBackend: Stopped
+25/11/14 00:30:58 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+25/11/14 00:30:58 INFO MemoryStore: MemoryStore cleared
+25/11/14 00:30:58 INFO BlockManager: BlockManager stopped
+25/11/14 00:30:58 INFO BlockManagerMaster: BlockManagerMaster stopped
+25/11/14 00:30:58 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+25/11/14 00:30:58 INFO SparkContext: Successfully stopped SparkContext
+25/11/14 00:30:58 INFO ShutdownHookManager: Shutdown hook called
+25/11/14 00:30:58 INFO ShutdownHookManager: Deleting directory /mnt/tmp/spark-5eca83c6-eb31-44ad-8d82-6b8caec64271
+25/11/14 00:30:58 INFO ShutdownHookManager: Deleting directory /mnt/tmp/spark-3c405949-6c0d-46e3-895c-91f0b68c4d08
+25/11/14 00:30:58 INFO ShutdownHookManager: Deleting directory /mnt/tmp/spark-5eca83c6-eb31-44ad-8d82-6b8caec64271/pyspark-053ae101-b043-464a-ac33-e0d39fd95841
+[hadoop@ip-10-0-25-18 ~]$ 

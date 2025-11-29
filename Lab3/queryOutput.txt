@@ -1,0 +1,87 @@
+Query1:
+k nearest neighbors for query:
+  distance = 0.147183, docID = 20_newsgroups/comp.graphics/38778, category = comp.graphics
+  distance = 0.149217, docID = 20_newsgroups/comp.graphics/38376, category = comp.graphics
+  distance = 0.149217, docID = 20_newsgroups/comp.graphics/38853, category = comp.graphics
+  distance = 0.149767, docID = 20_newsgroups/comp.graphics/38852, category = comp.graphics
+  distance = 0.149837, docID = 20_newsgroups/comp.graphics/38375, category = comp.graphics
+Predicted label: comp.graphics
+
+Predicted category: comp.graphics
+
+Query2:
+k nearest neighbors for query:
+  distance = 0.203819, docID = 20_newsgroups/soc.religion.christian/20758, category = soc.religion.christian
+  distance = 0.206610, docID = 20_newsgroups/talk.religion.misc/83829, category = talk.religion.misc
+  distance = 0.207407, docID = 20_newsgroups/alt.atheism/54230, category = alt.atheism
+  distance = 0.207407, docID = 20_newsgroups/talk.religion.misc/84402, category = talk.religion.misc
+  distance = 0.207750, docID = 20_newsgroups/talk.religion.misc/83884, category = talk.religion.misc
+Predicted label: talk.religion.misc
+
+Predicted category: talk.religion.misc
+
+Query3:
+k nearest neighbors for query:
+  distance = 0.150262, docID = 20_newsgroups/sci.crypt/16123, category = sci.crypt
+  distance = 0.150647, docID = 20_newsgroups/talk.politics.misc/179058, category = talk.politics.misc
+  distance = 0.151409, docID = 20_newsgroups/soc.religion.christian/21396, category = soc.religion.christian
+  distance = 0.151436, docID = 20_newsgroups/alt.atheism/53519, category = alt.atheism
+  distance = 0.151790, docID = 20_newsgroups/talk.politics.mideast/77355, category = talk.politics.mideast
+Predicted label: sci.crypt
+
+Predicted category: sci.crypt
+
+Query4:
+k nearest neighbors for query:
+  distance = 0.122882, docID = 20_newsgroups/alt.atheism/51060, category = alt.atheism
+  distance = 0.126601, docID = 20_newsgroups/alt.atheism/52499, category = alt.atheism
+  distance = 0.128369, docID = 20_newsgroups/soc.religion.christian/21458, category = soc.religion.christian
+  distance = 0.129850, docID = 20_newsgroups/alt.atheism/54163, category = alt.atheism
+  distance = 0.130357, docID = 20_newsgroups/alt.atheism/49960, category = alt.atheism
+Predicted label: alt.atheism
+
+Predicted category: alt.atheism
+
+Query5:
+k nearest neighbors for query:
+  distance = 0.171573, docID = 20_newsgroups/sci.space/59908, category = sci.space
+  distance = 0.171849, docID = 20_newsgroups/sci.space/60842, category = sci.space
+  distance = 0.172092, docID = 20_newsgroups/sci.space/61207, category = sci.space
+  distance = 0.174616, docID = 20_newsgroups/sci.space/59872, category = sci.space
+  distance = 0.175048, docID = 20_newsgroups/sci.space/59849, category = sci.space
+Predicted label: sci.space
+
+Predicted category: sci.space
+
+Query6:
+k nearest neighbors for query:
+  distance = 0.220451, docID = 20_newsgroups/sci.crypt/16123, category = sci.crypt
+  distance = 0.220632, docID = 20_newsgroups/talk.politics.misc/179058, category = talk.politics.misc
+  distance = 0.220682, docID = 20_newsgroups/sci.electronics/54148, category = sci.electronics
+  distance = 0.221209, docID = 20_newsgroups/talk.politics.mideast/76266, category = talk.politics.mideast
+  distance = 0.221814, docID = 20_newsgroups/alt.atheism/52499, category = alt.atheism
+Predicted label: sci.crypt
+
+Predicted category: sci.crypt
+
+Query7:
+k nearest neighbors for query:
+  distance = 0.180410, docID = 20_newsgroups/talk.politics.guns/54168, category = talk.politics.guns
+  distance = 0.184111, docID = 20_newsgroups/talk.politics.guns/54231, category = talk.politics.guns
+  distance = 0.185446, docID = 20_newsgroups/talk.politics.guns/54120, category = talk.politics.guns
+  distance = 0.190371, docID = 20_newsgroups/talk.politics.guns/54128, category = talk.politics.guns
+  distance = 0.192530, docID = 20_newsgroups/sci.crypt/16123, category = sci.crypt
+Predicted label: talk.politics.guns
+
+Predicted category: talk.politics.guns
+
+Query8:
+k nearest neighbors for query:
+  distance = 0.131879, docID = 20_newsgroups/rec.sport.hockey/53468, category = rec.sport.hockey
+  distance = 0.137873, docID = 20_newsgroups/talk.politics.mideast/76266, category = talk.politics.mideast
+  distance = 0.138086, docID = 20_newsgroups/sci.crypt/16123, category = sci.crypt
+  distance = 0.138155, docID = 20_newsgroups/rec.sport.baseball/104343, category = rec.sport.baseball
+  distance = 0.138588, docID = 20_newsgroups/talk.politics.misc/179058, category = talk.politics.misc
+Predicted label: rec.sport.hockey
+
+Predicted category: rec.sport.hockey

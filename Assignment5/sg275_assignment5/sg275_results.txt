@@ -1,0 +1,48 @@
+Task1:
+Rank of 'proceeding': 1958
+Rank of 'orders': 947
+Rank of 'formula': 487
+Rank of 'tribunal': 491
+
+Task2:
+Top 20 words with largest positive regression coefficients (excluding stopwords):
+  word=which, index=23, weight=0.063200
+  word=not, index=28, weight=0.049992
+  word=satisfied, index=2355, weight=0.048743
+  word=pursuant, index=2931, weight=0.047803
+  word=fca, index=3168, weight=0.047711
+  word=also, index=29, weight=0.047175
+  word=pty, index=1604, weight=0.045333
+  word=application, index=479, weight=0.043932
+  word=one, index=36, weight=0.040492
+  word=appropriate, index=1711, weight=0.039198
+  word=have, index=35, weight=0.038715
+  word=orders, index=947, weight=0.038265
+  word=there, index=50, weight=0.037870
+  word=other, index=45, weight=0.037381
+  word=dismissed, index=2429, weight=0.037282
+  word=been, index=42, weight=0.036852
+  word=hca, index=3319, weight=0.036742
+  word=reasons, index=864, weight=0.036536
+  word=ltd, index=887, weight=0.036259
+  word=fcr, index=3914, weight=0.036206
+
+Task3:
+TP: 366
+FP: 7
+TN: 18341
+FN: 11
+Precision: 0.981233
+Recall: 0.970822
+F1 score: 0.976000
+Accuracy: 0.999039
+
+False Positive #1:
+  docid   = 33449045
+  snippet = Parliamentary Commissioner Act 1967  The Parliamentary Commissioner Act 1967 is an Act of the Parliament of the United Kingdom. It established the office of the Parliamentary Commissioner for Administration (Parliamentary Ombudsman). The Ombudsman is responsible for investigating the administrative 
+False Positive #2:
+  docid   = 41480781
+  snippet = Rudolph Valentino Case  The Rudolph Valentino Case (ルドルフ・バレンチノ事件) is a 2005 decision of the Supreme Court of Japan concerning a trial for invalidation of a trademark RUDOLPH VALENTINO. Background. X owned a trademark "RUDOLPH VALENTINO" (hereinafter, "X's Trademark") for clothing as the designated g
+False Positive #3:
+  docid   = 39394654
+  snippet = S v Russell  In S v Russell, an important case in South African criminal law, heard on July 12, 1967, the accused had been warned of the danger of operating a crane under a live electric wire, but had failed to pass on the warning to his co-employees. This omission, constituting negligence, led to t

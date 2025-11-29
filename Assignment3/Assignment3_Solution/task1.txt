@@ -1,0 +1,29 @@
+[hadoop@ip-10-0-16-115 ~]$ hadoop fs -ls out_task1_jun
+Found 9 items
+-rw-r--r--   1 hadoop hdfsadmingroup          0 2025-10-29 23:36 out_task1_jun/_SUCCESS
+-rw-r--r--   1 hadoop hdfsadmingroup        116 2025-10-29 23:36 out_task1_jun/part-r-00000
+-rw-r--r--   1 hadoop hdfsadmingroup        117 2025-10-29 23:36 out_task1_jun/part-r-00001
+-rw-r--r--   1 hadoop hdfsadmingroup        145 2025-10-29 23:36 out_task1_jun/part-r-00002
+-rw-r--r--   1 hadoop hdfsadmingroup        116 2025-10-29 23:36 out_task1_jun/part-r-00003
+-rw-r--r--   1 hadoop hdfsadmingroup        116 2025-10-29 23:36 out_task1_jun/part-r-00004
+-rw-r--r--   1 hadoop hdfsadmingroup         86 2025-10-29 23:36 out_task1_jun/part-r-00005
+-rw-r--r--   1 hadoop hdfsadmingroup         87 2025-10-29 23:36 out_task1_jun/part-r-00006
+-rw-r--r--   1 hadoop hdfsadmingroup         86 2025-10-29 23:36 out_task1_jun/part-r-00007
+[hadoop@ip-10-0-16-115 ~]$ hadoop fs -get out_task1_jun/part-r-00001
+[hadoop@ip-10-0-16-115 ~]$ hadoop fs -get out_task1_jun/part-r-00002
+[hadoop@ip-10-0-16-115 ~]$ hadoop fs -get out_task1_jun/part-r-00001
+get: `part-r-00001': File exists
+[hadoop@ip-10-0-16-115 ~]$ head part-1-00001
+head: cannot open ‘part-1-00001’ for reading: No such file or directory
+[hadoop@ip-10-0-16-115 ~]$ head part-r-00001
+2013-06-06	7990652.720000533
+2013-06-17	6601498.3900002325
+2013-06-20	7727357.320000615
+2013-06-28	7823081.670000431
+[hadoop@ip-10-0-16-115 ~]$ head part-r-00002
+2013-06-07	8028643.020000566
+2013-06-10	7023471.380000307
+2013-06-18	7004796.280000502
+2013-06-21	7688887.060000612
+2013-06-29	7143670.710000055
+[hadoop@ip-10-0-16-115 ~]$
