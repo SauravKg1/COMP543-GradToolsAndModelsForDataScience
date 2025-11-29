@@ -1,0 +1,30 @@
+Homework 1 				                  SAURAV KUMAR GUPTA(SG275)
+
+Consider the following set of relations, which describe coffee and coffee drinkers:
+EATS (PERSON, FOOD) 
+HAS_INGREDIENT (FOOD, ING_NAME) 
+INGREDIENT (ING_NAME, STORE) 
+The relation EATS tells us which people eat which food. People can eat more than one food, of course. The HAS_INGREDIENT relation tells us what ingredients go into each type of food. Any food can have multiple ingredients. And the INGREDIENT relation tells us which store each ingredient is sold at; an ingredient can be purchased at multiple stores.
+(1) Write RC expressions to compute each of the following. Note that you can abbreviate attribute names if you’d like to write less (you can use P for PERSON, F for FOOD, IN for ING_NAME, and S for STORE).  1.a is worth 0.5 pts, 1.b and 1.c are worth 1 point.
+(a) Which stores contribute an ingredient to a food consumed by “Luis”? 
+{i.STORE | INGREDIENT(i) and EXISTS (hi) ((HAS_INGREDIENT)(hi) and hi.ING_NAME = i.ING_NAME and  EXISTS (e)((EATS(e) and e.FOOD = hi.FOOD and e.PERSON = “Luis”)))}
+
+(b) Which people don't eat any of the foods that are consumed by "Luis"?
+{e1.PERSON | EATS(e1) and NOT EXISTS (e2)(EATS(e2) and e2.PERSON = “Luis” and NOT EXISTS (e3)(EATS(e3) e3.PERSON = e1.PERSON and e3.FOOD = e1.FOOD))}
+
+(c) Which people eat a set of foods that together contain all of the ingredients that can be purchased at “Walmart”? 
+{ p.PERSON |EATS(p) EXISTS (e)(EATS(e) AND e.PERSON = p.PERSON) AND FORALL(i)( INGREDIENT(i) AND i.STORE = "Walmart" -> EXISTS(h, e2)(HAS_INGREDIENT(h) AND h.ING_NAME = i.ING_NAME AND EATS(e2) AND e2.PERSON = p.PERSON AND e2.FOOD = h.FOOD))}
+
+(2) Consider the same set of relations. Write RA expressions to compute each of the following. Again, you can abbreviate attribute names. 2.a is worth 0.5 pts, 2.b and 2.c are worth 1 point.
+(a) Which stores sell both the ingredients “tomatoes” and "carrots"? 
+(πSTORE(σING_NAME=′tomatoes′(INGREDIENT)))∩(πSTORE(σING_NAME=′carrots′(INGREDIENT)))
+
+(b) Which people eat a food that contains an ingredient sold by "HEB" or by "Kroger"? 
+πPERSON(EATS⋈FOOD=FOODHAS_INGREDIENT⋈ING_NAME= ING_NAME (σSTORE=′HEB′ ∨ STORE=′Kroger′(INGREDIENT))) 
+
+
+(c) Which stores sell all of the ingredients in the food "Club Sandwich" (or "CS")? 
+
+πSTORE((σFOOD=′CS′(HAS_INGREDIENT)⋈ ING_NAME= ING_NAME INGREDIENT))−πSTORE(((πING_NAME(σFOOD=′CS′(HAS_INGREDIENT))×πSTORE(INGREDIENT))−πING_NAME,STORE(INGREDIENT)))
+
+
